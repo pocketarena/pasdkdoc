@@ -1,0 +1,3480 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PA SDK Reference</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;ver=4.7">
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+  <header class="banner navbar navbar-default navbar-static-top" role="banner">
+  	<div class="container">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+  				<span class="sr-only">Toggle navigation</span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+  			<a class="navbar-brand" href="https://pocketarena.com/support/"><img src="http://pocketarena.com/wp-content/uploads/2018/03/PA_Logo_top.png"></a>
+  		</div>
+
+        <nav class="collapse navbar-collapse" role="navigation">
+            <ul id="menu-menu-1" class="nav navbar-nav">
+                <li class="menu-home"><a target="_blank" href="http://pocketarena.com/support">Support</a></li>
+                <li class="menu-sign-in"><a target="_blank" href="http://pocketarena.com/">HOME</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <div class="title">
+        <p class="no1">PA SDK Guide</p>
+        <p class="no2">latest version: <span>v2.1</span></p>
+      </div>
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#how-to-use" class="toc-h1 toc-link" data-title="How to use">How to use</a>
+          </li>
+          <li>
+            <a href="#common-api" class="toc-h1 toc-link" data-title="Common API">Common API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#new-emojigagamespasdk" class="toc-h2 toc-link" data-title="new EmojigaGamesPASDK">new EmojigaGamesPASDK</a>
+                  </li>
+                  <li>
+                    <a href="#isready" class="toc-h2 toc-link" data-title="ISREADY">ISREADY</a>
+                  </li>
+                  <li>
+                    <a href="#getleaderboardtype" class="toc-h2 toc-link" data-title="GETLEADERBOARDTYPE">GETLEADERBOARDTYPE</a>
+                  </li>
+                  <li>
+                    <a href="#signin" class="toc-h2 toc-link" data-title="SIGNIN">SIGNIN</a>
+                  </li>
+                  <li>
+                    <a href="#signup" class="toc-h2 toc-link" data-title="SIGNUP">SIGNUP</a>
+                  </li>
+                  <li>
+                    <a href="#resetpassword" class="toc-h2 toc-link" data-title="RESETPASSWORD">RESETPASSWORD</a>
+                  </li>
+                  <li>
+                    <a href="#pocpurchase" class="toc-h2 toc-link" data-title="POCPURCHASE">POCPURCHASE</a>
+                  </li>
+                  <li>
+                    <a href="#getshopinfo" class="toc-h2 toc-link" data-title="GETSHOPINFO">GETSHOPINFO</a>
+                  </li>
+                  <li>
+                    <a href="#getrewardexp" class="toc-h2 toc-link" data-title="GETREWARDEXP">GETREWARDEXP</a>
+                  </li>
+                  <li>
+                    <a href="#getrewardpoc" class="toc-h2 toc-link" data-title="GETREWARDPOC">GETREWARDPOC</a>
+                  </li>
+                  <li>
+                    <a href="#openlink" class="toc-h2 toc-link" data-title="OPENLINK">OPENLINK</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account-api" class="toc-h1 toc-link" data-title="Account API">Account API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#player-getinfo" class="toc-h2 toc-link" data-title="PLAYER.GETINFO">PLAYER.GETINFO</a>
+                  </li>
+                  <li>
+                    <a href="#player-setinfo" class="toc-h2 toc-link" data-title="PLAYER.SETINFO">PLAYER.SETINFO</a>
+                  </li>
+                  <li>
+                    <a href="#player-getactivity" class="toc-h2 toc-link" data-title="PLAYER.GETACTIVITY">PLAYER.GETACTIVITY</a>
+                  </li>
+                  <li>
+                    <a href="#player-getmypoc" class="toc-h2 toc-link" data-title="PLAYER.GETMYPOC">PLAYER.GETMYPOC</a>
+                  </li>
+                  <li>
+                    <a href="#player-getmessage" class="toc-h2 toc-link" data-title="PLAYER.GETMESSAGE">PLAYER.GETMESSAGE</a>
+                  </li>
+                  <li>
+                    <a href="#player-getitem" class="toc-h2 toc-link" data-title="PLAYER.GETITEM">PLAYER.GETITEM</a>
+                  </li>
+                  <li>
+                    <a href="#player-updateitem" class="toc-h2 toc-link" data-title="PLAYER.UPDATEITEM">PLAYER.UPDATEITEM</a>
+                  </li>
+                  <li>
+                    <a href="#player-signout" class="toc-h2 toc-link" data-title="PLAYER.SIGNOUT">PLAYER.SIGNOUT</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#game-api" class="toc-h1 toc-link" data-title="Game API">Game API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#game-start" class="toc-h2 toc-link" data-title="GAME.START">GAME.START</a>
+                  </li>
+                  <li>
+                    <a href="#game-reportscore" class="toc-h2 toc-link" data-title="GAME.REPORTSCORE">GAME.REPORTSCORE</a>
+                  </li>
+                  <li>
+                    <a href="#game-setsavedata" class="toc-h2 toc-link" data-title="GAME.SETSAVEDATA">GAME.SETSAVEDATA</a>
+                  </li>
+                  <li>
+                    <a href="#game-getsavedata" class="toc-h2 toc-link" data-title="GAME.GETSAVEDATA">GAME.GETSAVEDATA</a>
+                  </li>
+                  <li>
+                    <a href="#game-leaderboard" class="toc-h2 toc-link" data-title="GAME.LEADERBOARD">GAME.LEADERBOARD</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#item-api" class="toc-h1 toc-link" data-title="Item API">Item API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#item-getgameitem" class="toc-h2 toc-link" data-title="ITEM.GETGAMEITEM">ITEM.GETGAMEITEM</a>
+                  </li>
+                  <li>
+                    <a href="#item-checkdefaultitems" class="toc-h2 toc-link" data-title="ITEM.CHECKDEFAULTITEMS">ITEM.CHECKDEFAULTITEMS</a>
+                  </li>
+                  <li>
+                    <a href="#item-purchase" class="toc-h2 toc-link" data-title="ITEM.PURCHASE">ITEM.PURCHASE</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ui-api" class="toc-h1 toc-link" data-title="UI API">UI API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ui-signup" class="toc-h2 toc-link" data-title="UI.SIGNUP">UI.SIGNUP</a>
+                  </li>
+                  <li>
+                    <a href="#ui-signin" class="toc-h2 toc-link" data-title="UI.SIGNIN">UI.SIGNIN</a>
+                  </li>
+                  <li>
+                    <a href="#ui-myprofile" class="toc-h2 toc-link" data-title="UI.MYPROFILE">UI.MYPROFILE</a>
+                  </li>
+                  <li>
+                    <a href="#ui-editprofile" class="toc-h2 toc-link" data-title="UI.EDITPROFILE">UI.EDITPROFILE</a>
+                  </li>
+                  <li>
+                    <a href="#ui-messagebox" class="toc-h2 toc-link" data-title="UI.MESSAGEBOX">UI.MESSAGEBOX</a>
+                  </li>
+                  <li>
+                    <a href="#ui-reward" class="toc-h2 toc-link" data-title="UI.REWARD">UI.REWARD</a>
+                  </li>
+                  <li>
+                    <a href="#ui-leaderboard" class="toc-h2 toc-link" data-title="UI.LEADERBOARD">UI.LEADERBOARD</a>
+                  </li>
+                  <li>
+                    <a href="#ui-patokenshop" class="toc-h2 toc-link" data-title="UI.PATOKENSHOP">UI.PATOKENSHOP</a>
+                  </li>
+                  <li>
+                    <a href="#ui-message" class="toc-h2 toc-link" data-title="UI.MESSAGE">UI.MESSAGE</a>
+                  </li>
+                  <li>
+                    <a href="#ui-close" class="toc-h2 toc-link" data-title="UI.CLOSE">UI.CLOSE</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to Pocket Arena SDK documentation...</p>
+<h1 id='how-to-use'>How to use</h1>
+<blockquote>
+<p>1 Insert script in the head tag of your game.</p>
+</blockquote>
+<pre class="highlight html tab-html"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery-2.1.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span> <span class="c">&lt;!-- jquery required--&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"EmojiGamesPASDK.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre>
+<blockquote>
+<p>2 Create a new instance of SDK</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">pasdk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EmojiGamesPASDK</span><span class="p">({</span>
+    <span class="na">gameId</span> <span class="p">:</span> <span class="s1">'xxxxxx'</span>    <span class="c1">//game id</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>3 After below <code>onComplete</code> function is triggered, you can just call any API.</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">ISREADY</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> 
+        <span class="c1">//onComplete</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'sdk is ready. Now SDK API is available.'</span><span class="p">)</span> 
+    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span> 
+        <span class="c1">//onError</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="s1">'error occurred during initializing.'</span><span class="p">)</span> 
+    <span class="p">});</span>
+</code></pre>
+<ol>
+<li>Insert script in the head tag of your game.</li>
+<li>Create a new instance of SDK</li>
+<li>After below <code>onComplete</code> function is triggered, you can just call any API.</li>
+</ol>
+
+<aside class="notice">
+Most of API will work ONLY after onComplete function of ISREADY() API is triggered.
+</aside>
+<h1 id='common-api'>Common API</h1><h2 id='new-emojigagamespasdk'>new EmojigaGamesPASDK</h2>
+<blockquote>
+<p>new EmojigaGamesPASDK( options )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">gameId</span> <span class="p">:</span> <span class="s1">'xxxxx'</span><span class="p">,</span>
+    <span class="na">recaptcha</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="na">siteKey</span> <span class="p">:</span> <span class="s1">'xxxxxxxx'</span><span class="p">,</span>
+        <span class="na">verifyUrl</span> <span class="p">:</span> <span class="s1">'http://.....'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EmojiGamesPASDK</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</code></pre>
+<p><code>new EmojigaGamesPASDK( options )</code></p>
+
+<p>Create a PA SDK instance.</p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>options</td>
+<td>object</td>
+<td>API call is success</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='options-argument'><code>options</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>gameId</td>
+<td></td>
+<td>-</td>
+<td>Game ID</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>recaptcha</td>
+<td></td>
+<td>-</td>
+<td>ReCaptcha info</td>
+</tr>
+<tr>
+<td>String</td>
+<td></td>
+<td>siteKey</td>
+<td>-</td>
+<td>ReCaptcha site key</td>
+</tr>
+<tr>
+<td>String</td>
+<td></td>
+<td>verifyUrl</td>
+<td>-</td>
+<td>Site URL to verify reCaptcha</td>
+</tr>
+</tbody></table>
+<h2 id='isready'>ISREADY</h2>
+<blockquote>
+<p>ISREADY( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">ISREADY</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//onComplete arg</span>
+
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//error arg</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'error object'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>ISREADY(onComplete, onError)</code></p>
+
+<p>SDK is ready to use. All functions of PA SDK should be called after this API is triggered.</p>
+<h3 id='oncomplete-argument'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='getleaderboardtype'>GETLEADERBOARDTYPE</h2>
+<blockquote>
+<p>GETLEADERBOARDTYPE()</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">pasdk</span><span class="p">.</span><span class="nx">GETLEADERBOARDTYPE</span><span class="p">()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'res'</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>     <span class="c1">// 'res win'</span>
+</code></pre>
+<p><code>GETLEADERBOARDTYPE()</code></p>
+
+<p>Get leaderboard type.</p>
+<h3 id='return-value'>Return value</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td><code>win</code></td>
+<td>Rank is based on number of win</td>
+</tr>
+<tr>
+<td></td>
+<td><code>score</code></td>
+<td>Rank is based on stage clear score or stage number.</td>
+</tr>
+</tbody></table>
+<h2 id='signin'>SIGNIN</h2>
+<blockquote>
+<p>SIGNIN( type, params, onComplete, onError )</p>
+
+<p><code>email</code> type</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNIN</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="p">{</span><span class="na">email</span> <span class="p">:</span> <span class="s1">'mbiz.spike@emojigames.io'</span><span class="p">,</span> <span class="na">password</span> <span class="p">:</span> <span class="s1">'12341234'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'poc'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>             <span class="c1">//'poc null' | 'poc 28342'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<blockquote>
+<p><code>sns</code> type</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNIN</span><span class="p">(</span><span class="s1">'sns'</span><span class="p">,</span> <span class="p">{</span><span class="na">snsName</span> <span class="p">:</span> <span class="s1">'facebook'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'poc'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>             <span class="c1">//'poc null' | 'poc 28342'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>SIGNIN( type, params, onComplete, onError )</code></p>
+
+<p>User sign in</p>
+<h3 id='type-argument'><code>type</code> argument</h3>
+<p>Sign in type</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td><code>email</code></td>
+<td>for email sign in</td>
+</tr>
+<tr>
+<td></td>
+<td><code>sns</code></td>
+<td>for SNS account sign in (Google, Facebook)</td>
+</tr>
+</tbody></table>
+<h3 id='params-argument'><code>params</code> argument</h3>
+<p>Parameters to send to server. Key varies depending on the <code>type</code> argument.</p>
+<h4 id='for-email-type'>For <code>email</code> type</h4>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>email address</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td>password. up to 8 characters</td>
+</tr>
+</tbody></table>
+<h4 id='for-sns-type'>For <code>sns</code> type</h4>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>snsName</td>
+<td>String</td>
+<td><code>facebook</code></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>google</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-2'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>player</td>
+<td>object</td>
+<td>Player data. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
+</tr>
+<tr>
+<td>poc</td>
+<td>number/null</td>
+<td>POC balance, <code>null</code> if user didn’t do phone verification</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-2'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='signup'>SIGNUP</h2>
+<blockquote>
+<p>SIGNUP( type, params, onComplete, onError )</p>
+
+<p><code>email</code> type</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNUP</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="p">{</span><span class="na">email</span> <span class="p">:</span> <span class="s1">'mbiz.spike@emojigames.io'</span><span class="p">,</span> <span class="na">password</span> <span class="p">:</span> <span class="s1">'12341234'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'poc'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>             <span class="c1">//'poc null' | 'poc 28342'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<blockquote>
+<p><code>sns</code> type</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNUP</span><span class="p">(</span><span class="s1">'sns'</span><span class="p">,</span> <span class="p">{</span><span class="na">snsName</span> <span class="p">:</span> <span class="s1">'facebook'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'poc'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>             <span class="c1">//'poc null' | 'poc 28342'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>SIGNUP(type, params, onComplete, onError)</code></p>
+
+<p>User sign up.</p>
+<h3 id='type-argument-2'><code>type</code> argument</h3>
+<p>Sign up type</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td><code>email</code></td>
+<td>for email sign in</td>
+</tr>
+<tr>
+<td></td>
+<td><code>sns</code></td>
+<td>for SNS account sign in (Google, Facebook)</td>
+</tr>
+</tbody></table>
+<h3 id='params-argument-2'><code>params</code> argument</h3>
+<p>Parameters to send to server. Key varies depending on the <code>type</code> argument.</p>
+<h4 id='for-email-type-2'>For <code>email</code> type</h4>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>email address</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td>password. up to 8 characters</td>
+</tr>
+</tbody></table>
+<h4 id='for-sns-type-2'>For <code>sns</code> type</h4>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>snsName</td>
+<td>String</td>
+<td><code>facebook</code></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>google</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>player</td>
+<td>object</td>
+<td>Player data. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
+</tr>
+<tr>
+<td>poc</td>
+<td>number/null</td>
+<td>POC balance, <code>null</code> if user didn’t do phone verification</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-3'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='resetpassword'>RESETPASSWORD</h2>
+<blockquote>
+<p>RESETPASSWORD( email, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">RESETPASSWORD</span> <span class="p">(</span> <span class="s1">'mbiz.spike@emojigames.io'</span><span class="p">,</span> 
+    <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>RESETPASSWORD( email, onComplete, onError )</code></p>
+
+<p>Send an email to reset password.</p>
+<h3 id='email-argument'><code>email</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>User&#39;s email address</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-4'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='pocpurchase'>POCPURCHASE</h2>
+<blockquote>
+<p>POCPURCHASE( gameShopNo, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">POCPURCHASE</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> 
+    <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> 
+<span class="p">});</span>
+</code></pre>
+<p><code>POCPURCHASE( gameShopNo, onComplete, onError )</code></p>
+
+<p>Request exchange POC for items or game currency such as Ruby. The item can be various depending on game.</p>
+<h3 id='gameshopno-argument'><code>gameShopNo</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>The <code>shopNo</code> value received from <a href="#getshopinfo">GETSHOPINFO</a></td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='getshopinfo'>GETSHOPINFO</h2>
+<blockquote>
+<p>GETSHOPINFO( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">GETSHOPINFO</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">returncode</span><span class="p">,</span> <span class="nx">poc</span><span class="p">,</span> <span class="nx">gameshop</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">returncode</span><span class="p">,</span> <span class="nx">poc</span><span class="p">,</span> <span class="nx">gameshop</span><span class="p">);</span>   <span class="c1">//success 200, 4, see below about gameshop array</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span> 
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> 
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p><code>gameshop</code> object list</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"shopno"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"item 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemimage"</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/ruby01.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemamount"</span><span class="p">:</span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pocamount"</span><span class="p">:</span><span class="s2">"10"</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+    </span><span class="s2">"shopno"</span><span class="p">:</span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"item 2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemimage"</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/ruby02.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemamount"</span><span class="p">:</span><span class="s2">"5500"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pocamount"</span><span class="p">:</span><span class="s2">"50"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><code>GETSHOPINFO( onComplete, onError )</code></p>
+
+<p>Get info that exchanges POC for items or game currency such as Ruby. The item can be various depending on game.</p>
+<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>returncode</td>
+<td></td>
+</tr>
+<tr>
+<td>Number</td>
+<td>poc</td>
+<td>User&#39;s POC balance</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>gameshop</td>
+<td><code>gameshop</code> list. See below</td>
+</tr>
+</tbody></table>
+<h4 id='gameshop-object'><code>gameshop</code> object</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>shopno</td>
+<td>Shop unique id</td>
+</tr>
+<tr>
+<td>String</td>
+<td>title</td>
+<td>Shop name</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemimage</td>
+<td>Shop iamge</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemamount</td>
+<td>Amount to buy</td>
+</tr>
+<tr>
+<td>String</td>
+<td>pocamount</td>
+<td>Required POC to buy</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='getrewardexp'>GETREWARDEXP</h2>
+<blockquote>
+<p>GETREWARDEXP( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">GETREWARDEXP</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">exp</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exp</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span> <span class="c1">//87 18</span>
+
+    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+
+    <span class="c1">//onEror</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> 
+<span class="p">});</span>
+</code></pre>
+<p><code>GETREWARDEXP(onComplete, onError)</code></p>
+
+<p>Get user’s POC reward exp and amount to get when the exp reaches 100.</p>
+<h3 id='oncomplete-argument-7'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>exp</td>
+<td>User&#39;s level experiece. in percent</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>poc</td>
+<td>POC that user will gain when current exp reaches next level. (ex : x18). /n Returns <code>null</code>, If user has not done phone verification.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='getrewardpoc'>GETREWARDPOC</h2>
+<blockquote>
+<p>GETREWARDPOC( params, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">GETREWARDPOC</span><span class="p">({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'xxxxxx'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">poc</span><span class="p">){</span>
+        <span class="c1">//onComplete</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poc</span><span class="p">)</span>    <span class="c1">//17</span>
+    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+        <span class="c1">//onError</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> 
+    <span class="p">});</span>
+</code></pre>
+<p><code>GETREWARDPOC(params, onComplete, onError)</code></p>
+
+<p>Get POC reward after a game when the POC exp reaches 100. 
+Please note that this API must be called when <a href="#game-reportscore"><code>GAME.REPORTSCORE</code></a> returns <code>rewardPoc</code>. 
+Also, Google reCaptcha verification is required. For that, you need a server API to verify the token. 
+SDK will use reCaptcha info given at constructor API to verify server side. 
+Developers need to implement how to get verified token, unless using UI.REWARD. 
+For more information about reCaptcha please refer to <a href="https://developers.google.com/recaptcha/intro">its official documentation</a>.
+Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>, it will take care of this process.</p>
+<h3 id='params-argument-3'><code>params</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Object</td>
+<td>Object for parameters to send to server verifying Google reCaptcha a verified token. <code>token</code> key is required. Also, additional parameters can be added. It depends on the server API’s need.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>token</td>
+<td>Google reCaptcha verified token</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-8'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>poc</td>
+<td>POC balance user is going to get when exp reaches 100</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-8'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='openlink'>OPENLINK</h2>
+<blockquote>
+<p>OPENLINK( pageName )</p>
+
+<p><code>wallet</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//redirect to PA Wallet website</span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">OPENLINK</span><span class="p">(</span><span class="s1">'wallet'</span><span class="p">)</span>
+
+</code></pre>
+<blockquote>
+<p><code>emojigames</code></p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//redirect to Emojigames website</span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">OPENLINK</span><span class="p">(</span><span class="s1">'emojigames'</span><span class="p">)</span>
+
+</code></pre>
+<p><code>OPENLINK(pageName)</code></p>
+
+<p>Open PA Wallet or EmojiGames website page.</p>
+<h3 id='pagename-argument'><code>pageName</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td><code>wallet</code></td>
+<td>Redirect to PA Wallet website in new tab.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>emojigames</code></td>
+<td>Redirect to EmojiGames website in new tab.</td>
+</tr>
+</tbody></table>
+<h1 id='account-api'>Account API</h1><h2 id='player-getinfo'>PLAYER.GETINFO</h2>
+<blockquote>
+<p>PLAYER.GETINFO()</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETINFO</span><span class="p">()</span>    <span class="c1">//see below</span>
+</code></pre>
+<blockquote>
+<p><code>player</code> parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countryCode"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"mbiz.spike@emojigames.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"idType"</span><span class="p">:</span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"https://pacoin.pocketarena.com/upload/user/image/NrPtCkznLubJ.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"isVerified"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nickname"</span><span class="p">:</span><span class="s2">"Spike Kang12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rewardExp"</span><span class="p">:{</span><span class="w">
+        </span><span class="s2">"POC"</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exp"</span><span class="p">:</span><span class="mi">87</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>PLAYER.GETINFO()</code></p>
+
+<p>Get player’s information such as email, name, and so on.</p>
+<h3 id='return-value'>Return value</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code> Object / Null</td>
+<td><code>null</code> if player is not signed in.</td>
+</tr>
+</tbody></table>
+<h3 id='player-object'><code>player</code> object</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>country</td>
+<td></td>
+<td>Player country</td>
+</tr>
+<tr>
+<td>String</td>
+<td>countryCode</td>
+<td></td>
+<td>Player country code</td>
+</tr>
+<tr>
+<td>String</td>
+<td>email</td>
+<td></td>
+<td>Player email</td>
+</tr>
+<tr>
+<td>String</td>
+<td>idType</td>
+<td></td>
+<td>Determine if it&#39;s SNS account or email account</td>
+</tr>
+<tr>
+<td>String</td>
+<td>image</td>
+<td></td>
+<td>Player profile image</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>isVerified</td>
+<td></td>
+<td><code>true</code> if user finished phone verification</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>level</td>
+<td></td>
+<td>Player level</td>
+</tr>
+<tr>
+<td>String</td>
+<td>nickname</td>
+<td></td>
+<td>Player nickname</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>rewardExp</td>
+<td></td>
+<td>Player&#39;s POC and level exp info</td>
+</tr>
+<tr>
+<td>Number</td>
+<td></td>
+<td>POC</td>
+<td>Player&#39;s POC amount</td>
+</tr>
+<tr>
+<td>Number</td>
+<td></td>
+<td>exp</td>
+<td>Player&#39;s level exp in percent</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-setinfo'>PLAYER.SETINFO</h2>
+<blockquote>
+<p>PLAYER.SETINFO( nickname, countryCode, currentPassword, newPassword, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">SETINFO</span><span class="p">(</span><span class="s1">'Brandon Jeong'</span><span class="p">,</span> <span class="s1">'KR'</span><span class="p">,</span> <span class="s1">'12341234'</span><span class="p">,</span> <span class="s1">'12341234'</span><span class="p">,</span> 
+    <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PLAYER.SETINFO(nickname, countryCode, currentPassword, newPassword, onComplete, onError)</code></p>
+
+<p>Set player’s information such as email, name, birthday, and gender.</p>
+<h3 id='nickname-argument'><code>nickname</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String / Null</td>
+<td><code>null</code> if player is not signed in.</td>
+</tr>
+</tbody></table>
+<h3 id='countrycode-argument'><code>countryCode</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String*</td>
+<td>Required. User&#39;s country code</td>
+</tr>
+</tbody></table>
+<h3 id='currentpassword-argument'><code>currentPassword</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>User&#39;s current password. At least 8, and up to 50 characters</td>
+</tr>
+</tbody></table>
+<h3 id='newpassword-argument'><code>newPassword</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>New password that user set to change. At least 8, and up to 50 characters</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-2'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-getactivity'>PLAYER.GETACTIVITY</h2>
+<blockquote>
+<p>PLAYER.GETACTIVITY( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETACTIVITY</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">activity</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'res'</span><span class="p">,</span> <span class="nx">activity</span><span class="p">)</span>     <span class="c1">//see below 'activity' object</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p><code>activity</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"draw"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"highscore"</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lastAccess"</span><span class="p">:</span><span class="s2">"2018-10-17T02:50:08-07:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lose"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"win"</span><span class="p">:</span><span class="mi">39</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>PLAYER.GETACTIVITY(onComplete, onError)</code></p>
+
+<p>Get player’s PA activity statistic such as number of wins, lose, and last access time.</p>
+<h3 id='oncomplete-argument-2'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-3'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-getmypoc'>PLAYER.GETMYPOC</h2>
+<blockquote>
+<p>PLAYER.GETMYPOC( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETMYPOC</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'res'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span> <span class="c1">//4</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PLAYER.GETMYPOC(onComplete, onError)</code></p>
+
+<p>Get current POC balance</p>
+<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number / null</td>
+<td>poc</td>
+<td>POC balance user currently has. Returns <code>null</code>, if user has not done phone verification.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-4'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-getmessage'>PLAYER.GETMESSAGE</h2>
+<blockquote>
+<p>PLAYER.GETMESSAGE( limit, page, onComplete, onError )`</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETMESSAGE</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">limit</span><span class="p">,</span> <span class="nx">pagebalance</span><span class="p">,</span> <span class="nx">hasNext</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">limit</span><span class="p">,</span> <span class="nx">pagebalance</span><span class="p">,</span> <span class="nx">hasNext</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p><code>notification</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"notificationno"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Notice Title"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Notice Description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notificationtype"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pocamount"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"registdate"</span><span class="p">:</span><span class="mi">1523976927</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>PLAYER.GETMESSAGE( limit, page, onComplete, onError )</code></p>
+
+<p>Get messages for user</p>
+<h3 id='limit-argument'><code>limit</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number / null</td>
+<td>Amount of messages in a page. default 10</td>
+</tr>
+</tbody></table>
+<h3 id='page-argument'><code>page</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number / null</td>
+<td>Page number to laod. default 1</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>currentPage</td>
+<td>Current page number</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>list</td>
+<td>List of notifications. See <code>notification</code> object below.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>hasNext</td>
+<td><code>true</code> there are more pages. <code>false</code> there is no more pages.</td>
+</tr>
+</tbody></table>
+<h3 id='notification-object'><code>notification</code> object</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>notificationno</td>
+<td>Notification number. Unique.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>title</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>String</td>
+<td>description</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>String</td>
+<td>notificationtype</td>
+<td>Notification type. <code>1</code> : system notice, <code>2</code> : title</td>
+</tr>
+<tr>
+<td>String\Null</td>
+<td>pocamount</td>
+<td>POC amount</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>registdate</td>
+<td>Registered date</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-getitem'>PLAYER.GETITEM</h2>
+<blockquote>
+<p>PLAYER.GETITEM( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETITEM</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>       <span class="c1">//see below</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p><code>item</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"useritemno"</span><span class="p">:</span><span class="s2">"928"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Iron Ball"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="s2">"Destroy all kind of bircks"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"itemimage"</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/iron-ball.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"itemtype"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"itemstatus"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"itemlevel"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"itemexp"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"marketyn"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"productid"</span><span class="p">:</span><span class="s2">"bfLGiKLxJdwjwQ"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>PLAYER.GETITEM(onComplete, onError)</code></p>
+
+<p>Get user’s item list</p>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Array</td>
+<td>list</td>
+<td>List of <code>item</code> object. See below</td>
+</tr>
+</tbody></table>
+<h3 id='item-object'><code>item</code> object</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>itemshopno</td>
+<td>Item shop number</td>
+</tr>
+<tr>
+<td>String</td>
+<td>title</td>
+<td>Item title</td>
+</tr>
+<tr>
+<td>String</td>
+<td>subtitle</td>
+<td>Item subtitle</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemimage</td>
+<td>Item image url</td>
+</tr>
+<tr>
+<td>String</td>
+<td>price</td>
+<td>Item price</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemtype</td>
+<td><code>1</code> : All mode (single and multi play)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>2</code> : Single play</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>3</code> : Multi play</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemstatus</td>
+<td><code>1</code> : Not yet on market</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>2</code> : On market</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemlevel</td>
+<td>Item level</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemexp</td>
+<td>Item experience</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-updateitem'>PLAYER.UPDATEITEM</h2>
+<blockquote>
+<p>PLAYER.UPDATEITEM( items, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//'items' array should contains all 'item' objects from ITEM.GETGAMEITEM</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[{</span>
+             <span class="na">useritemno</span><span class="p">:</span><span class="s2">"928"</span><span class="p">,</span>
+             <span class="na">title</span><span class="p">:</span><span class="s2">"Iron Ball"</span><span class="p">,</span>
+             <span class="na">subtitle</span><span class="p">:</span><span class="s2">"Destroy all kind of bircks"</span><span class="p">,</span>
+             <span class="na">itemimage</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/iron-ball.png"</span><span class="p">,</span>
+             <span class="na">price</span><span class="p">:</span><span class="s2">"100"</span><span class="p">,</span>
+             <span class="na">itemtype</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+             <span class="na">itemstatus</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+             <span class="na">itemlevel</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+             <span class="na">itemexp</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span>
+             <span class="na">marketyn</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+             <span class="na">productid</span><span class="p">:</span><span class="s2">"bfLGiKLxJdwjwQ"</span>
+           <span class="p">}]</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">UPDATEITEM</span><span class="p">(</span> <span class="nx">items</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PLAYER.UPDATEITEM( items, onComplete, onError )</code></p>
+
+<p>Update user’s item list</p>
+<h3 id='items-argument'><code>items</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Array</td>
+<td>Array of containing item object.It should include not only items to update, but also the other items those user have. Item object is from <a href="#item-getgameitem">ITEM.GETGAMEITEM</a></td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-signout'>PLAYER.SIGNOUT</h2>
+<p><code>PLAYER.SIGNOUT()</code></p>
+<h1 id='game-api'>Game API</h1><h2 id='game-start'>GAME.START</h2>
+<blockquote>
+<p>GAME.START( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">GAME</span><span class="p">.</span><span class="nx">START</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>GAME.START( onComplete, onError )</code></p>
+
+<p>Call when a game start. This API must be called for every single play.</p>
+<h3 id='oncomplete-argument'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='game-reportscore'>GAME.REPORTSCORE</h2>
+<blockquote>
+<p>GAME.REPORTSCORE( score, type, code, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">score</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="nx">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>    <span class="c1">//single play</span>
+    <span class="nx">code</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">//win</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">GAME</span><span class="p">.</span><span class="nx">REPORTSCORE</span><span class="p">(</span><span class="nx">score</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">rewardpoc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'rewardpoc'</span><span class="p">,</span> <span class="nx">rewardpoc</span><span class="p">)</span> <span class="c1">//rewardpoc null | 14</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>GAME.REPORTSCORE(score, type, code, onComplete, onError)</code></p>
+
+<p>Call when a game has finished to record the score to leaderboard</p>
+<h3 id='score-argument'><code>score</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>Score to send</td>
+</tr>
+</tbody></table>
+<h3 id='type-argument'><code>type</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td><code>0</code></td>
+<td>Single play</td>
+</tr>
+<tr>
+<td></td>
+<td><code>1</code></td>
+<td>Multi play</td>
+</tr>
+</tbody></table>
+<h3 id='code-argument'><code>code</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td><code>0</code></td>
+<td>Single</td>
+</tr>
+<tr>
+<td></td>
+<td><code>1</code></td>
+<td>Win</td>
+</tr>
+<tr>
+<td></td>
+<td><code>2</code></td>
+<td>Lose</td>
+</tr>
+<tr>
+<td></td>
+<td><code>3</code></td>
+<td>Draw</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-2'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number / Null</td>
+<td>rewardPOC</td>
+<td>Amount of POC as a reward. If this argument’s value is not <code>null</code>, either you can use <a href="#ui-reward"><code>UI.REWARD</code></a> API or build your own UI using <a href="#getrewardpoc"><code>GETREWARDPOC</code></a></td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-2'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='game-setsavedata'>GAME.SETSAVEDATA</h2>
+<blockquote>
+<p>GAME.SETSAVEDATA( data1, data2, data3, data4, data5, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data1</span> <span class="o">=</span> <span class="s1">'980;'</span><span class="p">,</span>
+    <span class="nx">data2</span> <span class="o">=</span> <span class="s1">'295;263;||263;262;'</span><span class="p">,</span>
+    <span class="nx">data3</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="nx">data4</span> <span class="o">=</span> <span class="s1">'4000'</span><span class="p">,</span>
+    <span class="nx">data5</span> <span class="o">=</span> <span class="s1">'3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;'</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">GAME</span><span class="p">.</span><span class="nx">SETSAVEDATA</span><span class="p">(</span><span class="nx">data1</span><span class="p">,</span> <span class="nx">data2</span><span class="p">,</span> <span class="nx">data3</span><span class="p">,</span> <span class="nx">data4</span><span class="p">,</span> <span class="nx">data5</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>GAME.SETSAVEDATA( data1, data2, data3, data4, data5, onComplete, onError )</code></p>
+
+<p>Set user game data</p>
+
+<aside class="notice">
+Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte of space.
+</aside>
+<h3 id='data1-data5-arguments'><code>data1</code> ~ <code>data5</code> arguments</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String / Null</td>
+<td>data1</td>
+<td>Any data. Send <code>null</code> if there is nothing to save.</td>
+</tr>
+<tr>
+<td>String / Null</td>
+<td>data2</td>
+<td>Any data. Send <code>null</code> if there is nothing to save.</td>
+</tr>
+<tr>
+<td>String / Null</td>
+<td>data3</td>
+<td>Any data. Send <code>null</code> if there is nothing to save.</td>
+</tr>
+<tr>
+<td>String / Null</td>
+<td>data4</td>
+<td>Any data. Send <code>null</code> if there is nothing to save.</td>
+</tr>
+<tr>
+<td>String / Null</td>
+<td>data5</td>
+<td>Any data. Send <code>null</code> if there is nothing to save.</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-3'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='game-getsavedata'>GAME.GETSAVEDATA</h2>
+<blockquote>
+<p>GAME.GETSAVEDATA( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">GAME</span><span class="p">.</span><span class="nx">GETSAVEDATA</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data1</span><span class="p">,</span> <span class="nx">data2</span><span class="p">,</span> <span class="nx">data3</span><span class="p">,</span> <span class="nx">data4</span><span class="p">,</span> <span class="nx">data5</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="nx">data1</span><span class="p">,</span> <span class="nx">data2</span><span class="p">,</span> <span class="nx">data3</span><span class="p">,</span> <span class="nx">data4</span><span class="p">,</span> <span class="nx">data5</span><span class="p">)</span>  <span class="c1">//data '980;' '' '295;263;||263;262;' '4000' '3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>GAME.GETSAVEDATA(onComplete, onError)</code></p>
+
+<p>Get user game data</p>
+<h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>data1</td>
+<td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>data2</td>
+<td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>data3</td>
+<td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>data4</td>
+<td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>data5</td>
+<td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-4'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='game-leaderboard'>GAME.LEADERBOARD</h2>
+<blockquote>
+<p>GAME.LEADERBOARD( refresh, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">refresh</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">GAME</span><span class="p">.</span><span class="nx">LEADERBOARD</span><span class="p">(</span><span class="nx">refresh</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">leaderboard</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'leaderboard'</span><span class="p">,</span> <span class="nx">leaderboard</span><span class="p">)</span>     <span class="c1">//see below 'leaderboard' object</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> 
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>Value of <code>leaderboard</code></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"eventtile"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"startdate"</span><span class="p">:</span><span class="mi">1533254400</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"enddate"</span><span class="p">:</span><span class="mi">1564790400</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"myscore"</span><span class="p">:</span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"myranking"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"leadertype"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"totalcount"</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"leader"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"rowcount"</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"leaderdata"</span><span class="p">:[</span><span class="w">  
+         </span><span class="err">//see</span><span class="w"> </span><span class="err">below</span><span class="w"> </span><span class="err">'entry'</span><span class="w"> </span><span class="err">object</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><code>entry</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">  
+    </span><span class="s2">"ranking"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"isme"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="s2">"EN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"picture"</span><span class="p">:</span><span class="s2">"NrPtCkznLubJ.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nickname"</span><span class="p">:</span><span class="s2">"Spike Kang12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gamescore"</span><span class="p">:</span><span class="s2">"3"</span><span class="w">
+ </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">  
+    </span><span class="s2">"ranking"</span><span class="p">:</span><span class="s2">"14"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"isme"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="s2">"VN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"picture"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nickname"</span><span class="p">:</span><span class="s2">"simon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gamescore"</span><span class="p">:</span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><code>GAME.LEADERBOARD(refresh, onComplete, onError)</code></p>
+
+<p>Get leaderboard data. Ordered by rank ascending</p>
+<h3 id='refresh-argument'><code>refresh</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Boolean</td>
+<td><code>true</code>, get leaderboard data from server.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>false</code>, get leaderboard data from SDK local data.</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+<h4 id='leaderboard-argument'><code>leaderboard</code> argument</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>myranking</td>
+<td></td>
+<td>User&#39;s rank</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>leader</td>
+<td></td>
+<td>Leaderboard data</td>
+</tr>
+<tr>
+<td>Number</td>
+<td></td>
+<td>rowcount</td>
+<td>Total number of entries</td>
+</tr>
+<tr>
+<td>Array</td>
+<td></td>
+<td>leaderdata</td>
+<td>Leaderboard list data. See <code>entry</code> object below</td>
+</tr>
+<tr>
+<td>String</td>
+<td>type</td>
+<td></td>
+<td>Leaderboard type. <code>0</code> : Win, <code>1</code> : Score</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>totalcount</td>
+<td></td>
+<td>Total number of entries</td>
+</tr>
+</tbody></table>
+<h4 id='entry-object'><code>entry</code> object</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>ranking</td>
+<td>Entry user&#39;s ranking</td>
+</tr>
+<tr>
+<td>String</td>
+<td>nickname</td>
+<td>Entry user&#39;s nickname</td>
+</tr>
+<tr>
+<td>String</td>
+<td>gamescore</td>
+<td>Entry user&#39;s gamescore</td>
+</tr>
+<tr>
+<td>String</td>
+<td>isme</td>
+<td><code>0</code> : Not user, <code>1</code> : User</td>
+</tr>
+<tr>
+<td>String</td>
+<td>locale</td>
+<td>Entry user&#39;s locale</td>
+</tr>
+<tr>
+<td>String</td>
+<td>picture</td>
+<td>Entry user&#39;s profile image. <code>&#39;&#39;</code> for user who doesn&#39;t have profile image</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h1 id='item-api'>Item API</h1><h2 id='item-getgameitem'>ITEM.GETGAMEITEM</h2>
+<blockquote>
+<p>ITEM.GETGAMEITEM( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">ITEM</span><span class="p">.</span><span class="nx">GETGAMEITEM</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'list'</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>   <span class="c1">//see below</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p><code>item</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">  
+    </span><span class="s2">"itemshopno"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Super Ball"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="s2">"Destroy all kind of bircks"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemimage"</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/superball.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"150"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemtype"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"marketyn"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productid"</span><span class="p">:</span><span class="s2">"OZUUEFKKjGHu"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><code>ITEM.GETGAMEITEM( onComplete, onError )</code></p>
+
+<p>Get items that game offers to users</p>
+<h3 id='oncomplete-argument'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+<h4 id='list-argument'><code>list</code> argument</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Array</td>
+<td>List of <code>item</code> object</td>
+</tr>
+</tbody></table>
+<h4 id='item-object'><code>item</code> object</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>itemshopno</td>
+<td>Item shop number</td>
+</tr>
+<tr>
+<td>String</td>
+<td>title</td>
+<td>Item title</td>
+</tr>
+<tr>
+<td>String</td>
+<td>subtitle</td>
+<td>Item subtitle</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemimage</td>
+<td>Item image url</td>
+</tr>
+<tr>
+<td>String</td>
+<td>price</td>
+<td>Item price</td>
+</tr>
+<tr>
+<td>String</td>
+<td>itemtype</td>
+<td><code>1</code> : All mode</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>2</code> : single play</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>3</code> : multi play</td>
+</tr>
+<tr>
+<td>String</td>
+<td>marketyn</td>
+<td><code>1</code> : Using item in blockchain</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>2</code> : Not using item in blockchain</td>
+</tr>
+<tr>
+<td>String</td>
+<td>productid</td>
+<td>Product ID from EmojiGames itemshop. Empty string(<code>&#39;&#39;</code>) when <code>marketyn</code> is <code>0</code></td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='item-checkdefaultitems'>ITEM.CHECKDEFAULTITEMS</h2>
+<blockquote>
+<p>ITEM.CHECKDEFAULTITEMS( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">ITEM</span><span class="p">.</span><span class="nx">CHECKDEFAULTITEMS</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'list'</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>       <span class="c1">//see below</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<blockquote>
+<p><code>item</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">  
+    </span><span class="s2">"useritemno"</span><span class="p">:</span><span class="s2">"928"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Iron Ball"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subtitle"</span><span class="p">:</span><span class="s2">"Destroy all kind of bircks"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemimage"</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/iron-ball.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemtype"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemstatus"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemlevel"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"itemexp"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"marketyn"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productid"</span><span class="p">:</span><span class="s2">"bfLGiKLxJdwjwQ"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p><code>ITEM.CHECKDEFAULTITEMS( onComplete, onError )</code></p>
+
+<p>Check if user is given default items. It not, it will be given.</p>
+<h3 id='oncomplete-argument-2'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Array</td>
+<td>list</td>
+<td>List of <code>item</code> object. Same from <a href="#player-getitem"><code>PLAYER.GETITEM</code></a></td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-2'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='item-purchase'>ITEM.PURCHASE</h2>
+<blockquote>
+<p>ITEM.PURCHASE( items, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">//list of 'item' object</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="na">itemshopno</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span><span class="s2">"Super Ball"</span><span class="p">,</span>
+    <span class="na">subtitle</span><span class="p">:</span><span class="s2">"Destroy all kind of bircks"</span><span class="p">,</span>
+    <span class="na">itemimage</span><span class="p">:</span><span class="s2">"https://ipascf.pocketarena.com/pa/superball.png"</span><span class="p">,</span>
+    <span class="na">price</span><span class="p">:</span><span class="s2">"150"</span><span class="p">,</span>
+    <span class="na">itemtype</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">marketyn</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+    <span class="na">productid</span><span class="p">:</span><span class="s2">"OZUUEFKKjGHu"</span>
+<span class="p">}];</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">ITEM</span><span class="p">.</span><span class="nx">PURCHASE</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>ITEM.PURCHASE( items, onComplete, onError )</code></p>
+
+<p>Call when user purchases an item from <a href="#item-getgameitem">ITEM.GETGAMEITEM</a> API</p>
+<h3 id='items-argument'><code>items</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Array</td>
+<td>List of <code>item</code> object to send to server. Same item from <a href="#item-getgameitem">ITEM.GETGAMEITEM</a> API</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-3'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h1 id='ui-api'>UI API</h1>
+<p>Display UI such as leaderboard, sign in/up so on on screen</p>
+<h2 id='ui-signup'>UI.SIGNUP</h2>
+<blockquote>
+<p>UI.SIGNUP( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">SIGNUP</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>     <span class="c1">//success {...} 87568</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.SIGNUP( onComplete, onError )</code></p>
+
+<p>Display sign up modal</p>
+<h3 id='oncomplete-argument'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Object</td>
+<td>player</td>
+<td>Player info. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
+</tr>
+<tr>
+<td>Number / Null</td>
+<td>poc</td>
+<td><code>null</code> if user has not done phone verification. Otherwise POC balance.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-signin'>UI.SIGNIN</h2>
+<blockquote>
+<p>UI.SIGNIN( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">SIGNIN</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>     <span class="c1">//success {...} 87568</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.SIGNIN( onComplete, onError )</code></p>
+
+<p>Display sign in modal</p>
+<h3 id='oncomplete-argument-2'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Object</td>
+<td>player</td>
+<td>Player info. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
+</tr>
+<tr>
+<td>Number / Null</td>
+<td>poc</td>
+<td><code>null</code> if user has not done phone verification. Otherwise POC balance.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-2'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-myprofile'>UI.MYPROFILE</h2>
+<blockquote>
+<p>UI.MYPROFILE( onSignOut, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">MYPROFILE</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onSignout</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.MYPROFILE( onSignOut, onError )</code></p>
+
+<p>Display my profile modal</p>
+<h3 id='onsignout-argument'><code>onSignOut</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when user clicks <code>sign out</code> button.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-3'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-editprofile'>UI.EDITPROFILE</h2>
+<blockquote>
+<p>UI.EDITPROFILE( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">EDITPROFILE</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.EDITPROFILE( onComplete, onError )</code></p>
+
+<p>Display my profile edit form modal</p>
+<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-4'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-messagebox'>UI.MESSAGEBOX</h2>
+<blockquote>
+<p>UI.MESSAGEBOX( onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">MESSAGEBOX</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.MESSAGEBOX( onError )</code></p>
+
+<p>Display my message box modal</p>
+<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-reward'>UI.REWARD</h2>
+<blockquote>
+<p>UI.REWARD( POCamount, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">pocAmount</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">REWARD</span><span class="p">(</span> <span class="nx">pocAmount</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.REWARD( POCamount, onComplete, onError )</code></p>
+
+<p>Display POC reward modal. This API is for <code>onComplete</code> argument of <a href="#game-reportscore"><code>GAME.REPORTSCORE</code></a></p>
+<h3 id='pocamount-argument'><code>POCamount</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>POC amount to receive. This value is from <code>onComplete</code> argument of <a href="#game-reportscore"><code>GAME.REPORTSCORE</code></a></td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Number</td>
+<td>POCamount</td>
+<td>Reward POC after reCaptcha verification</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-leaderboard'>UI.LEADERBOARD</h2>
+<blockquote>
+<p>UI.LEADERBOARD( onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">LEADERBOARD</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.LEADERBOARD( onError )</code></p>
+
+<p>Display leaderboard modal</p>
+<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-patokenshop'>UI.PATOKENSHOP</h2>
+<blockquote>
+<p>UI.PATOKENSHOP( onClose, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">PATOKENSHOP</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">POC</span><span class="p">,</span> <span class="nx">purchasedItem</span><span class="p">){</span>
+    <span class="c1">//onClose</span>
+    <span class="c1">//User clicked 'X'(close) button after purchase</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">POC</span><span class="p">,</span> <span class="nx">purchasedItem</span><span class="p">)</span>      <span class="c1">//success 19 3</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button without purchase</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.PATOKENSHOP(onClose, onError)</code></p>
+
+<p>Display token shop modal. When purchase is made, SDK will calculate and return POC balance and the total amount of item to <code>onClose</code> argument.</p>
+<h3 id='onclose-argument'><code>onClose</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when user click ‘x’(close) button <strong>after purchasing item(s)</strong>.</td>
+</tr>
+</tbody></table>
+
+<p><code>onClose</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>POC</td>
+<td>POC balance after purchase</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>purchsedItem</td>
+<td>Amount of items purchased in the modal</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-8'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-message'>UI.MESSAGE</h2>
+<blockquote>
+<p>UI.MESSAGE( message, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="p">{</span><span class="na">title</span> <span class="p">:</span> <span class="s1">'Hi there'</span><span class="p">,</span> 
+        <span class="na">message</span><span class="p">:</span> <span class="s1">'Welcome to Pocket Arena!&lt;br&gt;Want to join?'</span><span class="p">,</span>
+        <span class="na">buttons</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span> <span class="na">text</span> <span class="p">:</span> <span class="s2">"Sure"</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="na">text</span> <span class="p">:</span> <span class="s2">"No, thanks"</span> <span class="p">}</span>     <span class="c1">//up to two buttons</span>
+             <span class="p">]};</span>
+
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">MESSAGE</span><span class="p">(</span> <span class="nx">message</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idx</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">idx</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'\'Sure\' button clicked '</span><span class="p">)</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="nx">idx</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'\'No, thanks\' button clicked '</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="c1">//ex) User clicked 'X'(close) button </span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>UI.MESSAGE( message, onComplete, onError )</code></p>
+
+<p>Display a dialog that contains messages.</p>
+<h3 id='message-argument'><code>message</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>object</td>
+<td>Setting for message dialog</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>title</td>
+<td>Modal title</td>
+</tr>
+<tr>
+<td>String</td>
+<td>message</td>
+<td>Modal message</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>buttons</td>
+<td>Text for buttons. Up to two buttons. Contains <code>button</code> object</td>
+</tr>
+</tbody></table>
+<h4 id='button-object'><code>button</code> object</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>String</td>
+<td>text</td>
+<td>Button text</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when user click <code>OK</code> button.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-9'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Function</td>
+<td>Triggered when error occured.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='ui-close'>UI.CLOSE</h2>
+<blockquote>
+<p>UI.CLOSE()</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">CLOSE</span><span class="p">()</span>
+</code></pre>
+<p><code>UI.CLOSE()</code></p>
+
+<p>Close modal that is open currently</p>
+<h1 id='errors'>Errors</h1>
+<blockquote>
+<p><code>error</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"returncode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">"LACK_OF_POC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"BAD REQUEST"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userMessage"</span><span class="p">:</span><span class="s2">"Insufficient amount of POC."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>returncode</th>
+<th>message</th>
+<th>detail</th>
+<th>userMessage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Modal closed</td>
+<td>Modal closed</td>
+<td>Modal closed.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad request<br> ex) When clients send like below - wrong parameters and/or its value, - missing required parameters</td>
+<td>MISSING_PARAMETER</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_PARAMS_VALUE</td>
+<td>Please check your request and try it again.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>LACK_OF_POC</td>
+<td>Insufficient amount of POC.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>FAILED_TO_PASS_RECAPTCHA</td>
+<td>Failed to pass the reCAPTCHA, please try again.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>EMAIL_IS_ALREADY_IN_USE</td>
+<td>An account with this email is already in use.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_SHOP_ITEM</td>
+<td>The item could not be found in the shop.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_ID_OR_PASSWORD</td>
+<td>Invalid ID or password.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>INVALID_PHONE_NUMBER</td>
+<td>Phone number is invalid.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>THIS_PHONE_NUMBER_IS_ALREADY_USED_TO_VERIFY</td>
+<td>This phone number is already in use.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_CURRENT_PASSWORD</td>
+<td>Current password is incorrect.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_FILE_EXTENSION</td>
+<td>Wrong file extension.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_USER_INFO_OR_OTP</td>
+<td>Could not sign in because of wrong user info.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>NEED_AGREEMENT_PACOIN</td>
+<td>Phone number verification is required to use POC.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>UNKNOWN_USER_ITEM</td>
+<td>It&#39;s an unknown user item.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>UNAVAILABLE_USER_ITEM</td>
+<td>The item is unavailable.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>WRONG_PASSWORD</td>
+<td>Invalid ID or password.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized<br> Player needs to sign in.<br> ex) - Valid session time is over. <br>- Player signed out.<br> - Player is not signed in.<br> - disabled account</td>
+<td>UNKNOWN_USER</td>
+<td>Unknown user.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>DISABLED_ACCOUNT</td>
+<td>This account has been disabled.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>SESSION_EXPIRED</td>
+<td>Session has expired.</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Phone verification required<br> User needs to do email verification to use POC. When user is not verified by phone this code will be returned</td>
+<td>PHONE_VERIFICATION_REQUIRED</td>
+<td>Phone verification required.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too many request</td>
+<td>TOO_MANY_SIGN_UP_WITH_SAME_IP</td>
+<td>You can not create a PA Account on your current IP address.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Server error<br> ex) server is not available, unknown error, etc</td>
+<td>SYSTEM_ERROR</td>
+<td>Server error has occurred.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>CAN_NOT_GET_USER_POC</td>
+<td>Server error has occurred.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>POC_SERVER_DID_NOT_RESPONSE</td>
+<td>Server error has occurred.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>CAN_NOT_REGISTER_TO_BLOCKCHAIN</td>
+<td>Server error has occurred.</td>
+</tr>
+<tr>
+<td>502</td>
+<td>Bad gateway</td>
+<td>BAD_GATEWAY</td>
+<td>Server error has occurred.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service unavailable : ex) timeout, connection lost</td>
+<td>SERVICE_UNAVAILABLE</td>
+<td>Service unavailable.</td>
+</tr>
+<tr>
+<td>505</td>
+<td>Unknown<br> Unknown error</td>
+<td>UNKNOWN</td>
+<td>Unknown error has occurred.<br> Please try it later.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>FAILED_TO_UPDATE_USER_DATA</td>
+<td>Save failed. Please try it again.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>ETC<br> When message is delivered from another server. The message varies.<br> Format : “ETC : (a message from another server)” <br>ex) “ETC : error on loadAccount“</td>
+<td></td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://pocketarena.com/support/wp-content/themes/wedocs-develop/assets/js/plugins/bootstrap.min.js?ver=4.7"></script>
+  </body>
+</html>
