@@ -1,0 +1,3 @@
+PA SDK doc version management
+
+- 'build' folder is always the latest version
