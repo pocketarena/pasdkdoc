@@ -19,7 +19,7 @@ search: true
 
 # Introduction
 
-Welcome to Pocket Arena SDK documentation. 
+Welcome to Pocket Arena SDK documentation...
 
 # How to use
 
