@@ -1,6 +1,8 @@
 # UI API
 
-Display UI such as leaderboard, sign in/up so on on screen
+Display UI on screen such as leaderboard, sign in/up and tokenshop. Please note that … <br>
+1. animation duration of modal open and closing is 400ms. This may close a modal that is called during the animation phase. <br>
+2. User’s sign in status can be changed after UI API call. For example, non signed in user can sign in/up when the modal is open, because some contents are required sign in/up and the UI will prompt the user to sign in/up modal.<br>
 
 ## UI.SIGNUP
 
@@ -24,20 +26,20 @@ Display sign up modal
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-Object | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
-Number / Null | poc | `null` if user has not done phone verification. Otherwise POC balance.
+<span class="d-type object">Object</span> | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
+<span class="d-type number">Number</span> / Null | poc | `null` if user has not done phone verification. Otherwise POC balance.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -65,31 +67,30 @@ Display sign in modal
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-Object | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
-Number / Null | poc | `null` if user has not done phone verification. Otherwise POC balance.
+<span class="d-type object">Object</span> | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
+<span class="d-type number">Number</span> / Null | poc | `null` if user has not done phone verification. Otherwise POC balance.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
 
-
 ## UI.MYPROFILE
 
-> UI.MYPROFILE( onSignOut, onError )
+> UI.MYPROFILE( onComplete, onError )
 
 ```javascript
-pasdk.UI.MYPROFILE(function(){
+pasdk.UI.MYPROFILE(function(isSignedIn){
     //onSignout
     console.log('success')
 }, function (err) {
@@ -99,20 +100,24 @@ pasdk.UI.MYPROFILE(function(){
 })
 ```
 
-`UI.MYPROFILE( onSignOut, onError )`
+`UI.MYPROFILE( onComplete, onError )`
 
-Display my profile modal
+Display my profile modal. Please note that user can sign out and change profile info while using this UI. 
 
-### `onSignOut` argument
+### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when user clicks `sign out` button.
+<span class="d-type func">Function</span> | Triggered when user clicks `sign out` button, and edit profile and closes it.<br>It returns below argument.
 
+#### `isSignedIn` argument
+Type | Description
+----- | ------- 
+<span class="d-type bool">Boolean</span> | `true` if user kept the session. Otherwise, `false` 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -141,13 +146,13 @@ Display my profile edit form modal
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -173,7 +178,7 @@ Display my message box modal
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -187,7 +192,7 @@ See [Errors](#errors) menu
 ```javascript
 var pocAmount = 18;
 
-pasdk.UI.REWARD( pocAmount, function(){
+pasdk.UI.REWARD( POCamount, function(POCamount, POCbalance, itemAmount){
     //onComplete
     console.log('success')
 }, function (err) {
@@ -204,24 +209,26 @@ Display POC reward modal. This API is for `onComplete` argument of [`GAME.REPORT
 ### `POCamount` argument
 Type | Description
 ----- | ------- 
-Number | POC amount to receive. This value is from `onComplete` argument of [`GAME.REPORTSCORE`](#game-reportscore)
+<span class="d-type number">Number</span> | POC amount to receive. This value is from `onComplete` argument of [`GAME.REPORTSCORE`](#game-reportscore)
 
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-Number | POCamount | Reward POC after reCaptcha verification
+<span class="d-type number">Number</span> | POCamount | Rewarded POC
+<span class="d-type number">Number</span> / Null | POCbalance | Number is returned, when user purchased something from POC Shop. Otherwise, null. The balance doesn’t include POCamount.
+<span class="d-type number">Number</span> / Null | itemAmount | Number is returned, when user purchased something from POC Shop. Otherwise, null. Item that user purchased by POC.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -247,7 +254,7 @@ Display leaderboard modal
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -277,20 +284,20 @@ Display token shop modal. When purchase is made, SDK will calculate and return P
 ### `onClose` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when user click ‘x’(close) button **after purchasing item(s)**.
+<span class="d-type func">Function</span> | Triggered when user click ‘x’(close) button **after purchasing item(s)**.
 
 `onClose` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-String | POC | POC balance after purchase
-Number | purchsedItem | Amount of items purchased in the modal
+<span class="d-type string">String</span> | POC | POC balance after purchase
+<span class="d-type number">Number</span> | purchsedItem | Amount of items purchased in the modal
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -335,26 +342,26 @@ object | Setting for message dialog
 
 Type | Key | Description
 ----- | ------- | ------- 
-String | title | Modal title
-String | message | Modal message
-Array | buttons | Text for buttons. Up to two buttons. Contains `button` object
+<span class="d-type string">String</span> | title | Modal title
+<span class="d-type string">String</span> | message | Modal message
+<span class="d-type array">Array</span> | buttons | Text for buttons. Up to two buttons. Contains `button` object
 
 #### `button` object
 Type | Key | Description
 ----- | ------- | ------- 
-String | text | Button text
+<span class="d-type string">String</span> | text | Button text
 
 
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when user click `OK` button.
+<span class="d-type func">Function</span> | Triggered when user click `OK` button.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 

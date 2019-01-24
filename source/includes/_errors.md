@@ -13,11 +13,10 @@
 
 returncode | message | detail | userMessage
 ---------- | ------- | ------- | ---------
-200 | Modal closed | Modal closed | Modal closed.
+200 | Modal closed | MODAL_CLOSED | Modal closed.
 400 | Bad request<br> ex) When clients send like below - wrong parameters and/or its value, - missing required parameters | MISSING_PARAMETER | 
  | | WRONG_PARAMS_VALUE | Please check your request and try it again.
  | | LACK_OF_POC | Insufficient amount of POC.
- | | FAILED_TO_PASS_RECAPTCHA | Failed to pass the reCAPTCHA, please try again.
  | | EMAIL_IS_ALREADY_IN_USE | An account with this email is already in use.
  | | WRONG_SHOP_ITEM | The item could not be found in the shop.
  | | WRONG_ID_OR_PASSWORD | Invalid ID or password.

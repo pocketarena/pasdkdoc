@@ -91,6 +91,12 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 $nav-footer-border-color: #666 !default;
 $search-box-border-color: #666 !default;
 
+$color-string: #8c6508;
+$color-number: #966fdc;
+$color-boolean: #5bc2d6;
+$color-func: $main-text;
+$color-object: #0e63ec;
+$color-array: #6cbc24;
 
 ////////////////////////////////////////////////////////////////////////////////
 // INTERNAL

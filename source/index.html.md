@@ -19,7 +19,7 @@ search: true
 
 # Introduction
 
-Welcome to Pocket Arena SDK documentation...
+Welcome to Pocket Arena SDK documentation. 
 
 # How to use
 
@@ -54,7 +54,7 @@ pasdk.ISREADY(function(){
 
 1. Insert script in the head tag of your game.
 2. Create a new instance of SDK
-3. After below `onComplete` function is triggered, you can just call any API.
+3. After `onComplete` function of `ISREADY` is triggered, you can just call any SDK API.
 
 
 <aside class="notice">

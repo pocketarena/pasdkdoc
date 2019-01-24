@@ -36,35 +36,35 @@ Get items that game offers to users
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 #### `list` argument
 Type | Description
 ----- | ------- 
-Array | List of `item` object
+<span class="d-type array">Array</span> | List of `item` object
 
 #### `item` object
 Type | Argument | Description
 ----- | ------- | ------- 
-String | itemshopno | Item shop number
-String | title | Item title
-String | subtitle | Item subtitle
-String | itemimage | Item image url
-String | price | Item price
-String | itemtype | `1` : All mode
+<span class="d-type string">String</span> | itemshopno | Item shop number
+<span class="d-type string">String</span> | title | Item title
+<span class="d-type string">String</span> | subtitle | Item subtitle
+<span class="d-type string">String</span> | itemimage | Item image url
+<span class="d-type string">String</span> | price | Item price
+<span class="d-type string">String</span> | itemtype | `1` : All mode
      |          | `2` : single play
      |          | `3` : multi play
-String | marketyn | `1` : Using item in blockchain
+<span class="d-type string">String</span> | marketyn | `1` : Using item in blockchain
      |          | `2` : Not using item in blockchain
-String | productid | Product ID from EmojiGames itemshop. Empty string(`''`) when `marketyn` is `0`
+<span class="d-type string">String</span> | productid | Product ID from EmojiGames itemshop. Empty string(`''`) when `marketyn` is `0`
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -109,19 +109,19 @@ Check if user is given default items. It not, it will be given.
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-Array | list | List of `item` object. Same from [`PLAYER.GETITEM`](#player-getitem)
+<span class="d-type array">Array</span> | list | List of `item` object. Same from [`PLAYER.GETITEM`](#player-getitem)
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -160,17 +160,17 @@ Call when user purchases an item from [ITEM.GETGAMEITEM](#item-getgameitem) API
 ### `items` argument
 Type | Description
 ----- | ------- 
-Array | List of `item` object to send to server. Same item from [ITEM.GETGAMEITEM](#item-getgameitem) API
+<span class="d-type array">Array</span> | List of `item` object to send to server. Same item from [ITEM.GETGAMEITEM](#item-getgameitem) API
 
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 

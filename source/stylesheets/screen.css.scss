@@ -891,6 +891,19 @@ html, body {
   }
 }
 
+.req {
+  color: red
+}
+
+.d-type {
+  font-size: 0.825em; border-radius: 8px; border: 1px solid; padding: 0.1em 0.6em 0.2em;}
+.d-type.string { color: $color-string; border-color: $color-string;}
+.d-type.number { color: $color-number; border-color: $color-number; }
+.d-type.bool { color: $color-boolean; border-color: $color-boolean; }
+.d-type.func { color: $color-func; border-color: $color-func; }
+.d-type.object { color: $color-object; border-color: $color-object; }
+.d-type.array { color: $color-array; border-color: $color-array; }
+
 @media (max-width: 767px) {
   .banner .navbar-header .navbar-brand {
     padding: 11px 6px;

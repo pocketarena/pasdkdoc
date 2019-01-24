@@ -19,18 +19,18 @@ Description
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-String | data | desc
+<span class="d-type string">String</span> | data | desc
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu

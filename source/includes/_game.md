@@ -21,12 +21,12 @@ Call when a game start. This API must be called for every single play.
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -51,23 +51,23 @@ pasdk.GAME.REPORTSCORE(score, type, code, function(rewardpoc){
 
 `GAME.REPORTSCORE(score, type, code, onComplete, onError)`
 
-Call when a game has finished to record the score to leaderboard
+Call when a game has finished to record the score to leaderboard. User’s sign in status can change after API call.
 
 ### `score` argument
 Type | Description
 ----- | ------- 
-Number | Score to send
+<span class="d-type number">Number</span> | Score to send
 
 ### `type` argument
 Type | Value | Description
 ----- | ------- | ------- 
-Number | `0` | Single play
+<span class="d-type number">Number</span> | `0` | Single play
      | `1` | Multi play
 
 ### `code` argument
 Type | Value | Description
 ----- | ------- | ------- 
-Number | `0` | Single
+<span class="d-type number">Number</span> | `0` | Single
      | `1` | Win
      | `2` | Lose
      | `3` | Draw
@@ -75,18 +75,18 @@ Number | `0` | Single
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-Number / Null | rewardPOC | Amount of POC as a reward. If this argument’s value is not `null`, either you can use [`UI.REWARD`](#ui-reward) API or build your own UI using [`GETREWARDPOC`](#getrewardpoc)   
+<span class="d-type number">Number</span> / Null | rewardPOC | Amount of POC as a reward. If this argument’s value is not `null`, either you can use [`UI.REWARD`](#ui-reward) API or build your own UI using [`GETREWARDPOC`](#getrewardpoc)   
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -122,21 +122,21 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 ### `data1` ~ `data5` arguments
 Type | Argument | Description
 ----- | ------- | ------- 
-String / Null | data1 | Any data. Send `null` if there is nothing to save.
-String / Null | data2 | Any data. Send `null` if there is nothing to save.
-String / Null | data3 | Any data. Send `null` if there is nothing to save.
-String / Null | data4 | Any data. Send `null` if there is nothing to save.
-String / Null | data5 | Any data. Send `null` if there is nothing to save.
+<span class="d-type string">String</span> / Null | data1 | Any data. Send `null` if there is nothing to save.
+<span class="d-type string">String</span> / Null | data2 | Any data. Send `null` if there is nothing to save.
+<span class="d-type string">String</span> / Null | data3 | Any data. Send `null` if there is nothing to save.
+<span class="d-type string">String</span> / Null | data4 | Any data. Send `null` if there is nothing to save.
+<span class="d-type string">String</span> / Null | data5 | Any data. Send `null` if there is nothing to save.
 
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -162,23 +162,23 @@ Get user game data
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
 `onComplete` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-String | data1 | Any data. When it's empty, Empty string(`''`) will be returned.
-String | data2 | Any data. When it's empty, Empty string(`''`) will be returned.
-String | data3 | Any data. When it's empty, Empty string(`''`) will be returned.
-String | data4 | Any data. When it's empty, Empty string(`''`) will be returned.
-String | data5 | Any data. When it's empty, Empty string(`''`) will be returned.
+<span class="d-type string">String</span> | data1 | Any data. When it's empty, Empty string(`''`) will be returned.
+<span class="d-type string">String</span> | data2 | Any data. When it's empty, Empty string(`''`) will be returned.
+<span class="d-type string">String</span> | data3 | Any data. When it's empty, Empty string(`''`) will be returned.
+<span class="d-type string">String</span> | data4 | Any data. When it's empty, Empty string(`''`) will be returned.
+<span class="d-type string">String</span> | data5 | Any data. When it's empty, Empty string(`''`) will be returned.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
@@ -198,7 +198,7 @@ pasdk.GAME.LEADERBOARD(refresh, function(leaderboard){
     console.log('err', err) 
 });
 ```
-> Value of `leaderboard`
+> Value of `leaderboard` for <b>normal</b> mode
 
 ```json
 {  
@@ -217,8 +217,56 @@ pasdk.GAME.LEADERBOARD(refresh, function(leaderboard){
    }
 }
 ```
+> Value of `leaderboard` for <b>eSports</b> mode
 
-> `entry` object
+```json
+{  
+   "eventtile":"",
+   "startdate":1533254400,
+   "enddate":1564790400,
+   "gameid":"yVvIYCpw",
+   "gameesportsno":"25",
+   "gametitle":"Cricket Championship for MicroMax",
+   "durationno": 2,
+   "remaintime": 234550,
+   "bgimage": "https:\/\/..com\/upload\/game\/pic\/1.png",
+   "stageno": "20",
+   "myleaderno": 24,
+   "groupno": 1,
+   "leadercount": 2,
+   "leader":{
+      "leaderdata":[  
+         //see below 'entry' object
+      ]
+   },
+   "rewards": [{
+           "reward_en": {
+               "title_1": "Final 10 users : $60   50 POC",
+               "title_2": "TOP 3 of each Group :50 POC ",
+               "description": "Final 10 users will be selected …...."
+           },
+           "reward_de": {
+               "title_1": "Final 10 users : $60   50 POC",
+               "title_2": "TOP 3 of each Group :50 POC ",
+               "description": "Final 10 users will be selected …...."
+   
+           },
+           "reward_zh": {
+               "title_1": "Final 10 users : $60   50 POC",
+               "title_2": "TOP 3 of each Group :50 POC ",
+               "description": "Final 10 users will be selected …...."
+   
+           },
+           "reward_ko": {
+               "title_1": "Final 10 users : $60   50 POC",
+               "title_2": "TOP 3 of each Group :50 POC ",
+               "description": "Final 10 users will be selected …...."
+           }
+       }]
+}
+```
+
+> `entry` object. Values are the same in both mode.
 
 ```json
 [{  
@@ -245,41 +293,77 @@ Get leaderboard data. Ordered by rank ascending
 ### `refresh` argument
 Type | Description
 ----- | ------- 
-Boolean | `true`, get leaderboard data from server.
+<span class="d-type bool">Boolean</span> | `true`, get leaderboard data from server.
         | `false`, get leaderboard data from SDK local data.
 
 ### `onComplete` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when call is success.
+<span class="d-type func">Function</span> | Triggered when call is success.
 
-`onComplete` returns belows.
+`onComplete` returns belows. There are two ways the value returned.<br> Normal mode and eSports mode
 
 #### `leaderboard` argument
+
+1. normal mode
+
 Type | Key | Key | Description
 ----- | ------- | --- | ------- 
- String | myranking | | User's rank
- Object | leader | | Leaderboard data
- Number |       | rowcount  | Total number of entries
- Array |       | leaderdata  | Leaderboard list data. See `entry` object below
- String | type | | Leaderboard type. `0` : Win, `1` : Score
- Number | totalcount | | Total number of entries
-                      
+ <span class="d-type string">String</span> | myranking | | User's rank
+ <span class="d-type object">Object</span> | leader | | Leaderboard data
+ <span class="d-type number">Number</span> |       | rowcount  | Total number of entries
+ <span class="d-type array">Array</span> |       | leaderdata  | Leaderboard list data. See `entry` object below
+ <span class="d-type string">String</span> | type | | Leaderboard type. `0` : Win, `1` : Score
+ <span class="d-type number">Number</span> | totalcount | | Total number of entries
+ 
+2. eSports mode
+
+Type | Key | Key | Description
+----- | ------- | --- | ------- 
+ <span class="d-type string">String</span> | eventtitle | | Its value will be returned if event exists. Otherwise, empty string("") 
+ <span class="d-type string">String</span> | gameid | | Game id of current game
+ <span class="d-type string">String</span> | gameesportsno | | Game id of current game
+ <span class="d-type string">String</span> | gametitle | | Title of current eSports game
+ <span class="d-type number">Number</span> | durationno | | 
+ <span class="d-type number">Number</span> | remaintime | | Remaining time of this duration. in seconds.
+ <span class="d-type string">String</span> | bgimage | | Background image to decorate current game's status. Developers can use their own image. 
+ <span class="d-type string">String</span> | stageno | | Stage number for this duration.
+ <span class="d-type number">Number</span> | myleaderno | | Number of my leaderboard.
+ <span class="d-type number">Number</span> | groupno | | Group number of my leaderboard.
+ <span class="d-type number">Number</span> | leadercount | | Total number of leaderboard entries.
+ <span class="d-type object">Object</span> | leader | | This one has below properties. 
+ <span class="d-type number">Number</span> |       | rowcount  | Total number of leaderboard entries.
+ <span class="d-type array">Array</span> |       | leaderdata  | Leaderboard list data. See `entry` object below
+ <span class="d-type array">Array</span> | rewards | | list of `reward` object. See below `reward` object.
+ 
+#### `reward` object
+ 
+ Type | Key | Key | Description
+ ----- | ------- | --- | ------- 
+ <span class="d-type object">Object</span> | reward_(language code, ex) `en`) | | This one has below properties. 
+ <span class="d-type string">String</span> | | title_1 | Title
+ <span class="d-type string">String</span> | | title_2 | Title 
+ <span class="d-type string">String</span> | | description | Description 
+ 
+
 #### `entry` object
+
+Both normal and eSports mode are the same. 
+
 Type | Key | Description
 --------- | ------- | -----------
-String | ranking | Entry user's ranking
-String | nickname | Entry user's nickname
-String | gamescore | Entry user's gamescore
-String | isme | `0` : Not user, `1` : User
-String | locale | Entry user's locale
-String | picture | Entry user's profile image. `''` for user who doesn't have profile image
+<span class="d-type string">String</span> | ranking | Entry user's ranking
+<span class="d-type string">String</span> | nickname | Entry user's nickname
+<span class="d-type string">String</span> | gamescore | Entry user's gamescore
+<span class="d-type string">String</span> | isme | `0` : Not user, `1` : User
+<span class="d-type string">String</span> | locale | Entry user's locale
+<span class="d-type string">String</span> | picture | Entry user's profile image. `''` for user who doesn't have profile image
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-Function | Triggered when error occured.
+<span class="d-type func">Function</span> | Triggered when error occurs.
 
 See [Errors](#errors) menu
 
