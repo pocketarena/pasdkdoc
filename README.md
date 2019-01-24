@@ -17,5 +17,6 @@
 ./deploy.sh
 ```
 
-7. The CNAME should be updated
+7. Once finished the deploying document, the CANME will be reset. 
+So, it needs to update the CNAME again in the setting
 `pasdkdoc.pocketarena.com`
