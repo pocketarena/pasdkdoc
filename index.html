@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="https://pocketarena.com/assets/favicon.ico" />
     <title>PA SDK Reference</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;ver=4.7">
@@ -213,13 +212,13 @@
   				<span class="icon-bar"></span>
   				<span class="icon-bar"></span>
   			</button>
-  			<a class="navbar-brand" href="https://pocketarena.com/support/"><img src="https://pocketarena.com/wp-content/uploads/2018/03/PA_Logo_top.png"></a>
+  			<a class="navbar-brand" href="https://pocketarena.com/support/"><img src="http://pocketarena.com/wp-content/uploads/2018/03/PA_Logo_top.png"></a>
   		</div>
 
         <nav class="collapse navbar-collapse" role="navigation">
             <ul id="menu-menu-1" class="nav navbar-nav">
-                <li class="menu-home"><a target="_blank" href="https://pocketarena.com/support">Support</a></li>
-                <li class="menu-sign-in"><a target="_blank" href="https://pocketarena.com/">HOME</a></li>
+                <li class="menu-home"><a target="_blank" href="http://pocketarena.com/support">Support</a></li>
+                <li class="menu-sign-in"><a target="_blank" href="http://pocketarena.com/">HOME</a></li>
             </ul>
         </nav>
     </div>
@@ -233,7 +232,7 @@
     <div class="toc-wrapper">
       <div class="title">
         <p class="no1">PA SDK Guide</p>
-        <p class="no2">latest version: <span>v2.1</span></p>
+        <p class="no2">latest version: <span>v2.2</span></p>
       </div>
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
@@ -271,6 +270,9 @@
                     <a href="#resetpassword" class="toc-h2 toc-link" data-title="RESETPASSWORD">RESETPASSWORD</a>
                   </li>
                   <li>
+                    <a href="#sendverificationcode" class="toc-h2 toc-link" data-title="SENDVERIFICATIONCODE">SENDVERIFICATIONCODE</a>
+                  </li>
+                  <li>
                     <a href="#pocpurchase" class="toc-h2 toc-link" data-title="POCPURCHASE">POCPURCHASE</a>
                   </li>
                   <li>
@@ -303,13 +305,22 @@
                     <a href="#player-getmypoc" class="toc-h2 toc-link" data-title="PLAYER.GETMYPOC">PLAYER.GETMYPOC</a>
                   </li>
                   <li>
+                    <a href="#player-countnewmessages" class="toc-h2 toc-link" data-title="PLAYER.COUNTNEWMESSAGES">PLAYER.COUNTNEWMESSAGES</a>
+                  </li>
+                  <li>
                     <a href="#player-getmessage" class="toc-h2 toc-link" data-title="PLAYER.GETMESSAGE">PLAYER.GETMESSAGE</a>
+                  </li>
+                  <li>
+                    <a href="#player-updatemessage" class="toc-h2 toc-link" data-title="PLAYER.UPDATEMESSAGE">PLAYER.UPDATEMESSAGE</a>
                   </li>
                   <li>
                     <a href="#player-getitem" class="toc-h2 toc-link" data-title="PLAYER.GETITEM">PLAYER.GETITEM</a>
                   </li>
                   <li>
                     <a href="#player-updateitem" class="toc-h2 toc-link" data-title="PLAYER.UPDATEITEM">PLAYER.UPDATEITEM</a>
+                  </li>
+                  <li>
+                    <a href="#player-sendverificationemail" class="toc-h2 toc-link" data-title="PLAYER.SENDVERIFICATIONEMAIL">PLAYER.SENDVERIFICATIONEMAIL</a>
                   </li>
                   <li>
                     <a href="#player-signout" class="toc-h2 toc-link" data-title="PLAYER.SIGNOUT">PLAYER.SIGNOUT</a>
@@ -394,7 +405,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to Pocket Arena SDK documentation...</p>
+<p>Welcome to Pocket Arena SDK documentation. </p>
 <h1 id='how-to-use'>How to use</h1>
 <blockquote>
 <p>1 Insert script in the head tag of your game.</p>
@@ -425,7 +436,7 @@
 <ol>
 <li>Insert script in the head tag of your game.</li>
 <li>Create a new instance of SDK</li>
-<li>After below <code>onComplete</code> function is triggered, you can just call any API.</li>
+<li>After <code>onComplete</code> function of <code>ISREADY</code> is triggered, you can just call any SDK API.</li>
 </ol>
 
 <aside class="notice">
@@ -437,10 +448,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">gameId</span> <span class="p">:</span> <span class="s1">'xxxxx'</span><span class="p">,</span>
-    <span class="na">recaptcha</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="na">siteKey</span> <span class="p">:</span> <span class="s1">'xxxxxxxx'</span><span class="p">,</span>
-        <span class="na">verifyUrl</span> <span class="p">:</span> <span class="s1">'http://.....'</span>
-    <span class="p">}</span>
+    <span class="na">useLeaderboard</span> <span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EmojiGamesPASDK</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
 </code></pre>
@@ -458,9 +466,9 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </thead><tbody>
 <tr>
 <td>options</td>
-<td>object</td>
+<td><span class="d-type object">Object</span></td>
+<td>-</td>
 <td>API call is success</td>
-<td></td>
 </tr>
 </tbody></table>
 <h3 id='options-argument'><code>options</code> argument</h3>
@@ -468,38 +476,33 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <tr>
 <th>Type</th>
 <th>Key</th>
-<th>Key</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
-<td>gameId</td>
-<td></td>
+<td><span class="d-type string">String</span></td>
+<td>gameId <span class="req">*</span></td>
 <td>-</td>
-<td>Game ID</td>
+<td>Game ID. You can get this id when you register your game.</td>
 </tr>
 <tr>
-<td>Object</td>
-<td>recaptcha</td>
-<td></td>
-<td>-</td>
-<td>ReCaptcha info</td>
+<td><span class="d-type bool">Boolean</span></td>
+<td>useLeaderboard</td>
+<td>false</td>
+<td>This option works only for the game that leaderboard is set to use. You can set leaderboard when you register your game.<br> <code>true</code> Use leaderboard.<br> <code>false</code> Not use.</td>
 </tr>
+</tbody></table>
+<h3 id='return'>Return</h3>
+<table><thead>
 <tr>
-<td>String</td>
-<td></td>
-<td>siteKey</td>
-<td>-</td>
-<td>ReCaptcha site key</td>
+<th>Type</th>
+<th>Description</th>
 </tr>
+</thead><tbody>
 <tr>
-<td>String</td>
-<td></td>
-<td>verifyUrl</td>
-<td>-</td>
-<td>Site URL to verify reCaptcha</td>
+<td><span class="d-type">EmojiGamesPASDK</span></td>
+<td>SDK instance</td>
 </tr>
 </tbody></table>
 <h2 id='isready'>ISREADY</h2>
@@ -525,7 +528,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -537,8 +540,8 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -563,7 +566,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td><code>win</code></td>
 <td>Rank is based on number of win</td>
 </tr>
@@ -579,7 +582,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 
 <p><code>email</code> type</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNIN</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="p">{</span><span class="na">email</span> <span class="p">:</span> <span class="s1">'mbiz.spike@emojigames.io'</span><span class="p">,</span> <span class="na">password</span> <span class="p">:</span> <span class="s1">'12341234'</span><span class="p">},</span> 
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNIN</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="p">{</span><span class="na">email</span> <span class="p">:</span> <span class="s1">'me@emojigames.io'</span><span class="p">,</span> <span class="na">password</span> <span class="p">:</span> <span class="s1">'#12345678'</span><span class="p">},</span> 
     <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
     <span class="c1">//onComplete</span>
     <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
@@ -602,9 +605,22 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 <span class="p">})</span>
 </code></pre>
+<blockquote>
+<p><code>phone</code> type</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNIN</span><span class="p">(</span><span class="s1">'phone'</span><span class="p">,</span> <span class="p">{</span><span class="na">number</span> <span class="p">:</span> <span class="s1">'1112223333'</span><span class="p">,</span> <span class="na">countryCode</span> <span class="p">:</span> <span class="s1">'82'</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="s1">'#12345678'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'poc'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>             <span class="c1">//'poc null' | 'poc 28342'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
 <p><code>SIGNIN( type, params, onComplete, onError )</code></p>
 
-<p>User sign in</p>
+<p>User sign in. You can either make your own UI or use <a href="#ui-signin">UI.SIGNIN</a> API.</p>
 <h3 id='type-argument'><code>type</code> argument</h3>
 <p>Sign in type</p>
 
@@ -616,14 +632,19 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td><code>email</code></td>
-<td>for email sign in</td>
+<td>For email sign in</td>
 </tr>
 <tr>
 <td></td>
 <td><code>sns</code></td>
-<td>for SNS account sign in (Google, Facebook)</td>
+<td>For SNS account sign in (Google, Facebook)</td>
+</tr>
+<tr>
+<td></td>
+<td><code>phone</code></td>
+<td>For phone number sign in</td>
 </tr>
 </tbody></table>
 <h3 id='params-argument'><code>params</code> argument</h3>
@@ -631,34 +652,34 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <h4 id='for-email-type'>For <code>email</code> type</h4>
 <table><thead>
 <tr>
-<th>Key</th>
 <th>Type</th>
+<th>Key</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td><span class="d-type string">String</span></td>
 <td>email</td>
-<td>String</td>
-<td>email address</td>
+<td>Email address</td>
 </tr>
 <tr>
+<td><span class="d-type string">String</span></td>
 <td>password</td>
-<td>String</td>
-<td>password. up to 8 characters</td>
+<td>Password. Up to 8 characters</td>
 </tr>
 </tbody></table>
 <h4 id='for-sns-type'>For <code>sns</code> type</h4>
 <table><thead>
 <tr>
-<th>Key</th>
 <th>Type</th>
+<th>Key</th>
 <th>Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td><span class="d-type string">String</span></td>
 <td>snsName</td>
-<td>String</td>
 <td><code>facebook</code></td>
 <td></td>
 </tr>
@@ -669,6 +690,30 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <td></td>
 </tr>
 </tbody></table>
+<h4 id='for-phone-type'>For <code>phone</code> type</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>number</td>
+<td>Phone number</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>countryCode</td>
+<td>Phone number country code. <br>ex) <code>1</code> for US/Canada, <code>41</code> for Switzerland</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>password</td>
+<td>Password. Up to 8 characters</td>
+</tr>
+</tbody></table>
 <h3 id='oncomplete-argument-2'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
@@ -677,27 +722,27 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when call is success.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when call is success. It returns below arguments.</td>
 </tr>
 </tbody></table>
 
 <table><thead>
 <tr>
-<th>Argument</th>
 <th>Type</th>
+<th>Argument</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td><span class="d-type object">Object</span></td>
 <td>player</td>
-<td>object</td>
 <td>Player data. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
 </tr>
 <tr>
+<td><span class="d-type number">Number</span>/null</td>
 <td>poc</td>
-<td>number/null</td>
-<td>POC balance, <code>null</code> if user didn’t do phone verification</td>
+<td>POC balance</td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument-2'><code>onError</code> argument</h3>
@@ -708,8 +753,8 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -720,7 +765,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 
 <p><code>email</code> type</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNUP</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="p">{</span><span class="na">email</span> <span class="p">:</span> <span class="s1">'mbiz.spike@emojigames.io'</span><span class="p">,</span> <span class="na">password</span> <span class="p">:</span> <span class="s1">'12341234'</span><span class="p">},</span> 
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNUP</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="p">{</span><span class="na">email</span> <span class="p">:</span> <span class="s1">'me@emojigames.io'</span><span class="p">,</span> <span class="na">password</span> <span class="p">:</span> <span class="s1">'12341234'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="s1">'My Nickname'</span><span class="p">,</span> <span class="na">vcode</span><span class="p">:</span> <span class="s1">'1234'</span><span class="p">},</span> 
     <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
     <span class="c1">//onComplete</span>
     <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
@@ -743,9 +788,22 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 <span class="p">})</span>
 </code></pre>
+<blockquote>
+<p><code>phone</code> type</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SIGNUP</span><span class="p">(</span><span class="s1">'phone'</span><span class="p">,</span> <span class="p">{</span><span class="na">number</span> <span class="p">:</span> <span class="s1">'1112223333'</span><span class="p">,</span> <span class="na">countryCode</span> <span class="p">:</span> <span class="s1">'82'</span><span class="p">,</span> <span class="na">password</span><span class="p">:</span> <span class="s1">'@1231234'</span><span class="p">,</span> <span class="na">nickname</span><span class="p">:</span> <span class="s1">'My Nickname'</span><span class="p">,</span> <span class="na">vcode</span><span class="p">:</span> <span class="s1">'1234'</span><span class="p">},</span> 
+    <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">poc</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="c1">//console.log('player', player)     //see PLAYER.GETINFO</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'poc'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span>             <span class="c1">//'poc null' | 'poc 28342'</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
 <p><code>SIGNUP(type, params, onComplete, onError)</code></p>
 
-<p>User sign up.</p>
+<p>User sign up. You can either make your own UI or use <a href="#ui-signup">UI.SIGNUP</a> API.</p>
 <h3 id='type-argument-2'><code>type</code> argument</h3>
 <p>Sign up type</p>
 
@@ -757,14 +815,19 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td><code>email</code></td>
-<td>for email sign in</td>
+<td>For email sign in</td>
 </tr>
 <tr>
 <td></td>
 <td><code>sns</code></td>
-<td>for SNS account sign in (Google, Facebook)</td>
+<td>For SNS account sign in (Google, Facebook)</td>
+</tr>
+<tr>
+<td></td>
+<td><code>phone</code></td>
+<td>For phone number sign in</td>
 </tr>
 </tbody></table>
 <h3 id='params-argument-2'><code>params</code> argument</h3>
@@ -772,34 +835,44 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <h4 id='for-email-type-2'>For <code>email</code> type</h4>
 <table><thead>
 <tr>
-<th>Key</th>
 <th>Type</th>
+<th>Key</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td><span class="d-type string">String</span></td>
 <td>email</td>
-<td>String</td>
-<td>email address</td>
+<td>Email address</td>
 </tr>
 <tr>
+<td><span class="d-type string">String</span></td>
 <td>password</td>
-<td>String</td>
-<td>password. up to 8 characters</td>
+<td>Password. Up to 8 characters</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>nickname</td>
+<td>Player&#39;s nickname</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>vcode</td>
+<td>Verification code. The code can be received via <a href="#sendverificationcode">SENDVERIFICATIONCODE</a> API. The API will send an email that contains the code.</td>
 </tr>
 </tbody></table>
 <h4 id='for-sns-type-2'>For <code>sns</code> type</h4>
 <table><thead>
 <tr>
-<th>Key</th>
 <th>Type</th>
+<th>Key</th>
 <th>Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td><span class="d-type string">String</span></td>
 <td>snsName</td>
-<td>String</td>
 <td><code>facebook</code></td>
 <td></td>
 </tr>
@@ -810,6 +883,40 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <td></td>
 </tr>
 </tbody></table>
+<h4 id='for-phone-type-2'>For <code>phone</code> type</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>number</td>
+<td>Email address</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>countryCode</td>
+<td>Phone number country code. ex) <code>1</code> for US/Canada, <code>41</code> for Switzerland</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>password</td>
+<td>Password. Up to 8 characters</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>nickname</td>
+<td>Player&#39;s nickname</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>vcode</td>
+<td>Verification code.  The code can be received via <a href="#sendverificationcode">SENDVERIFICATIONCODE</a> API. The API will send a sms that contains the code.</td>
+</tr>
+</tbody></table>
 <h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
@@ -818,27 +925,27 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
 
 <table><thead>
 <tr>
-<th>Argument</th>
 <th>Type</th>
+<th>Argument</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td><span class="d-type object">Object</span></td>
 <td>player</td>
-<td>object</td>
 <td>Player data. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
 </tr>
 <tr>
+<td><span class="d-type number">Number</span></td>
 <td>poc</td>
-<td>number/null</td>
-<td>POC balance, <code>null</code> if user didn’t do phone verification</td>
+<td>POC balance</td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument-3'><code>onError</code> argument</h3>
@@ -849,8 +956,8 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -859,7 +966,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <blockquote>
 <p>RESETPASSWORD( email, onComplete, onError )</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">RESETPASSWORD</span> <span class="p">(</span> <span class="s1">'mbiz.spike@emojigames.io'</span><span class="p">,</span> 
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">RESETPASSWORD</span> <span class="p">(</span> <span class="s1">'me@emojigames.io'</span><span class="p">,</span> 
     <span class="kd">function</span><span class="p">(){</span>
     <span class="c1">//onComplete</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
@@ -878,7 +985,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>User&#39;s email address</td>
 </tr>
 </tbody></table>
@@ -890,7 +997,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -902,8 +1009,138 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='sendverificationcode'>SENDVERIFICATIONCODE</h2>
+<blockquote>
+<p>SENDVERIFICATIONCODE( method, id, phoneCountryCode, onComplete, onError )</p>
+
+<p><code>email</code> method</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SENDVERIFICATIONCODE</span> <span class="p">(</span> <span class="s1">'email'</span><span class="p">,</span> <span class="s1">'me@emojigames.io'</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> 
+    <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<blockquote>
+<p><code>sms</code> method</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">SENDVERIFICATIONCODE</span> <span class="p">(</span> <span class="s1">'sms'</span><span class="p">,</span> <span class="s1">'123456789'</span><span class="p">,</span> <span class="s1">'41'</span><span class="p">,</span> 
+    <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<p><code>SENDVERIFICATIONCODE( method, id, phoneCountryCode, onComplete, onError )</code></p>
+
+<p>Send an email or sms to verify a new account.</p>
+<h3 id='method-argument'><code>method</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>Type to register an account. <code>email</code> or <code>sms</code></td>
+</tr>
+</tbody></table>
+<h3 id='id-argument'><code>id</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>User ID to verify</td>
+</tr>
+</tbody></table>
+<h4 id='for-email-method'>For <code>email</code> method</h4>
+<table><thead>
+<tr>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Email address</td>
+</tr>
+</tbody></table>
+<h4 id='for-sms-method'>For <code>sms</code> method</h4>
+<table><thead>
+<tr>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Phone number</td>
+</tr>
+</tbody></table>
+<h3 id='phonecountrycode-argument'><code>phoneCountryCode</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>ex : <code>41</code> for switzerland, <code>1</code> for US/Canada</td>
+</tr>
+</tbody></table>
+<h4 id='for-email-method-2'>For <code>email</code> method</h4>
+<table><thead>
+<tr>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>null or undefined</td>
+</tr>
+</tbody></table>
+<h4 id='for-sms-method-2'>For <code>sms</code> method</h4>
+<table><thead>
+<tr>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>phone country code</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -931,11 +1168,11 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>The <code>shopNo</code> value received from <a href="#getshopinfo">GETSHOPINFO</a></td>
 </tr>
 </tbody></table>
-<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -943,11 +1180,11 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
-<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -955,8 +1192,8 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -993,7 +1230,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <p><code>GETSHOPINFO( onComplete, onError )</code></p>
 
 <p>Get info that exchanges POC for items or game currency such as Ruby. The item can be various depending on game.</p>
-<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
+<h3 id='oncomplete-argument-7'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1001,7 +1238,7 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1016,17 +1253,17 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>returncode</td>
-<td></td>
+<td>200 : User verified.<br> 401 : User needs to verify the account</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>poc</td>
 <td>User&#39;s POC balance</td>
 </tr>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td>gameshop</td>
 <td><code>gameshop</code> list. See below</td>
 </tr>
@@ -1040,32 +1277,32 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>shopno</td>
 <td>Shop unique id</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>title</td>
 <td>Shop name</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemimage</td>
 <td>Shop iamge</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemamount</td>
 <td>Amount to buy</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>pocamount</td>
 <td>Required POC to buy</td>
 </tr>
 </tbody></table>
-<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
+<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1073,8 +1310,8 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -1097,113 +1334,6 @@ Most of API will work ONLY after onComplete function of ISREADY() API is trigger
 <p><code>GETREWARDEXP(onComplete, onError)</code></p>
 
 <p>Get user’s POC reward exp and amount to get when the exp reaches 100.</p>
-<h3 id='oncomplete-argument-7'><code>onComplete</code> argument</h3>
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Function</td>
-<td>Triggered when call is success.</td>
-</tr>
-</tbody></table>
-
-<p><code>onComplete</code> returns belows.</p>
-
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Argument</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Number</td>
-<td>exp</td>
-<td>User&#39;s level experiece. in percent</td>
-</tr>
-<tr>
-<td>Number</td>
-<td>poc</td>
-<td>POC that user will gain when current exp reaches next level. (ex : x18). /n Returns <code>null</code>, If user has not done phone verification.</td>
-</tr>
-</tbody></table>
-
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
-</tr>
-</tbody></table>
-<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
-</tr>
-</tbody></table>
-
-<p>See <a href="#errors">Errors</a> menu</p>
-<h2 id='getrewardpoc'>GETREWARDPOC</h2>
-<blockquote>
-<p>GETREWARDPOC( params, onComplete, onError )</p>
-</blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">GETREWARDPOC</span><span class="p">({</span><span class="na">token</span><span class="p">:</span> <span class="s1">'xxxxxx'</span><span class="p">},</span> 
-    <span class="kd">function</span><span class="p">(</span><span class="nx">poc</span><span class="p">){</span>
-        <span class="c1">//onComplete</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poc</span><span class="p">)</span>    <span class="c1">//17</span>
-    <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-        <span class="c1">//onError</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> 
-    <span class="p">});</span>
-</code></pre>
-<p><code>GETREWARDPOC(params, onComplete, onError)</code></p>
-
-<p>Get POC reward after a game when the POC exp reaches 100. 
-Please note that this API must be called when <a href="#game-reportscore"><code>GAME.REPORTSCORE</code></a> returns <code>rewardPoc</code>. 
-Also, Google reCaptcha verification is required. For that, you need a server API to verify the token. 
-SDK will use reCaptcha info given at constructor API to verify server side. 
-Developers need to implement how to get verified token, unless using UI.REWARD. 
-For more information about reCaptcha please refer to <a href="https://developers.google.com/recaptcha/intro">its official documentation</a>.
-Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>, it will take care of this process.</p>
-<h3 id='params-argument-3'><code>params</code> argument</h3>
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Object</td>
-<td>Object for parameters to send to server verifying Google reCaptcha a verified token. <code>token</code> key is required. Also, additional parameters can be added. It depends on the server API’s need.</td>
-</tr>
-</tbody></table>
-
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>String</td>
-<td>token</td>
-<td>Google reCaptcha verified token</td>
-</tr>
-</tbody></table>
 <h3 id='oncomplete-argument-8'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
@@ -1212,7 +1342,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1227,9 +1357,14 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
+<td>exp</td>
+<td>User&#39;s level experiece. in percent</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
 <td>poc</td>
-<td>POC balance user is going to get when exp reaches 100</td>
+<td>Amount of POC that user will gain when current exp reaches next level. (ex : x18). /n Returns <code>null</code>, If user has not done phone verification.</td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument-8'><code>onError</code> argument</h3>
@@ -1240,15 +1375,120 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='getrewardpoc'>GETREWARDPOC</h2>
+<blockquote>
+<p>GETREWARDPOC( params, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="c1">// When 'GAME.REPORTSCORE' is called...  </span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">GAME</span><span class="p">.</span><span class="nx">REPORTSCORE</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">rewardpoc</span><span class="p">){</span>
+
+    <span class="c1">//if 'rewardpoc' is returned</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">rewardpoc</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">//give POC as a reward to the user</span>
+        <span class="nx">pasdk</span><span class="p">.</span><span class="nx">GETREWARDPOC</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">poc</span><span class="p">){</span>
+                <span class="c1">//onComplete</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">poc</span><span class="p">)</span>    <span class="c1">//17</span>
+            <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+                <span class="c1">//onError</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> 
+            <span class="p">});</span>
+
+    <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+
+        <span class="c1">// do something necessary ...</span>
+
+    <span class="p">}</span>
+
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span> 
+<span class="p">})</span>
+</code></pre>
+<p><code>GETREWARDPOC(params, onComplete, onError)</code></p>
+
+<p>Get POC reward after a game when the POC exp reaches 100. 
+Please note that this API must be called when <a href="#game-reportscore"><code>GAME.REPORTSCORE</code></a> returns <code>rewardPoc</code>.<br>
+Instead, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>, it will take care of this process.</p>
+<h3 id='params-argument-3'><code>params</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type object">Object</span> / Null</td>
+<td>Optional settings</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>mode</td>
+<td><code>reward</code></td>
+<td><code>reward</code> or <code>check</code></td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-9'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>poc</td>
+<td>POC balance user is going to get when exp reaches 100</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-9'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
 <p>See <a href="#errors">Errors</a> menu</p>
 <h2 id='openlink'>OPENLINK</h2>
 <blockquote>
-<p>OPENLINK( pageName )</p>
+<p>OPENLINK( siteName, pageName )</p>
 
 <p><code>wallet</code></p>
 </blockquote>
@@ -1260,13 +1500,19 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <p><code>emojigames</code></p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="c1">//redirect to Emojigames website</span>
-<span class="nx">pasdk</span><span class="p">.</span><span class="nx">OPENLINK</span><span class="p">(</span><span class="s1">'emojigames'</span><span class="p">)</span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">OPENLINK</span><span class="p">(</span><span class="s1">'emojigames'</span><span class="p">);</span>
+
+<span class="c1">//redirect to Emojigames website's eSports result history page</span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">OPENLINK</span><span class="p">(</span><span class="s1">'emojigames'</span><span class="p">,</span> <span class="s1">'esportsHistory'</span><span class="p">);</span>
+
+<span class="c1">//redirect to Emojigames website's eSports leaderboard page</span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">OPENLINK</span><span class="p">(</span><span class="s1">'emojigames'</span><span class="p">,</span> <span class="s1">'esportsLeaderboard'</span><span class="p">);</span>
 
 </code></pre>
-<p><code>OPENLINK(pageName)</code></p>
+<p><code>OPENLINK(siteName, pageName)</code></p>
 
 <p>Open PA Wallet or EmojiGames website page.</p>
-<h3 id='pagename-argument'><code>pageName</code> argument</h3>
+<h3 id='sitename-argument'><code>siteName</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1275,7 +1521,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td><code>wallet</code></td>
 <td>Redirect to PA Wallet website in new tab.</td>
 </tr>
@@ -1285,6 +1531,25 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <td>Redirect to EmojiGames website in new tab.</td>
 </tr>
 </tbody></table>
+<h3 id='pagename-argument-for-emojigames'><code>pageName</code> argument for <code>emojigames</code></h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td><code>esportsHistory</code></td>
+<td>Redirect to eSports result history page of Emoji Games website in new tab.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>esportsLeaderboard</code></td>
+<td>Redirect to eSports leaderboard page of Emoji Games website in new tab.</td>
+</tr>
+</tbody></table>
 <h1 id='account-api'>Account API</h1><h2 id='player-getinfo'>PLAYER.GETINFO</h2>
 <blockquote>
 <p>PLAYER.GETINFO()</p>
@@ -1292,26 +1557,36 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETINFO</span><span class="p">()</span>    <span class="c1">//see below</span>
 </code></pre>
 <blockquote>
-<p><code>player</code> parameter</p>
+<p><code>player</code> object : for player signed in</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"countryCode"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"mbiz.spike@emojigames.io"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"Switzerland"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countryCode"</span><span class="p">:</span><span class="s2">"CH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"me@emojigames.io"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"idType"</span><span class="p">:</span><span class="s2">"email"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"https://pacoin.pocketarena.com/upload/user/image/NrPtCkznLubJ.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="s2">"https://pacoin.pocketarena.com/upload/player/image/NrPtCkznLubJ.jpg"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"isVerified"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"level"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"nickname"</span><span class="p">:</span><span class="s2">"Spike Kang12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nickname"</span><span class="p">:</span><span class="s2">"Spike Kang"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"rewardExp"</span><span class="p">:{</span><span class="w">
         </span><span class="s2">"POC"</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span><span class="w">
         </span><span class="s2">"exp"</span><span class="p">:</span><span class="mi">87</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p><code>player</code> object : for player who is not signed in</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"rewardExp"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countryCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Switzerland"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"isAnonymous"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p><code>PLAYER.GETINFO()</code></p>
 
-<p>Get player’s information such as email, name, and so on.</p>
+<p>Get player’s information such as email, name, and so on. <code>isAnonymous</code> is returned only for player who is not signed in.</p>
 <h3 id='return-value'>Return value</h3>
 <table><thead>
 <tr>
@@ -1320,11 +1595,11 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td><code>player</code> Object / Null</td>
-<td><code>null</code> if player is not signed in.</td>
+<td><span class="d-type object">Object</span></td>
+<td>if player is not signed in. <code>isAnonymous</code> is returned for non-signed player only.</td>
 </tr>
 </tbody></table>
-<h3 id='player-object'><code>player</code> object</h3>
+<h3 id='player-object-for-player-signed-in'><code>player</code> object : for player signed in</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1334,70 +1609,99 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>country</td>
 <td></td>
 <td>Player country</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>countryCode</td>
 <td></td>
 <td>Player country code</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>email</td>
 <td></td>
 <td>Player email</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>idType</td>
 <td></td>
-<td>Determine if it&#39;s SNS account or email account</td>
+<td>Determine if it&#39;s SNS account or email account<br> <code>email</code> or <code>sns</code></td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>image</td>
 <td></td>
 <td>Player profile image</td>
 </tr>
 <tr>
-<td>Boolean</td>
+<td><span class="d-type bool">Boolean</span></td>
 <td>isVerified</td>
 <td></td>
-<td><code>true</code> if user finished phone verification</td>
+<td><code>true</code> if player finished phone/email verification</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>level</td>
 <td></td>
 <td>Player level</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>nickname</td>
 <td></td>
 <td>Player nickname</td>
 </tr>
 <tr>
-<td>Object</td>
+<td><span class="d-type object">Object</span></td>
 <td>rewardExp</td>
 <td></td>
 <td>Player&#39;s POC and level exp info</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td></td>
 <td>POC</td>
 <td>Player&#39;s POC amount</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td></td>
 <td>exp</td>
 <td>Player&#39;s level exp in percent</td>
+</tr>
+</tbody></table>
+<h3 id='player-object-for-player-who-is-not-signed-in'><code>player</code> object : for player who is not signed in</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>rewardExp</td>
+<td>Player&#39;s level exp info</td>
+</tr>
+<tr>
+<td><span class="d-type bool">Boolean</span></td>
+<td>isAnonymous</td>
+<td><code>true</code> always, since this key is for non-signed player</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>country</td>
+<td>Ex) Player&#39;s country. ex) <code>Switzerland</code>.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>countryCode</td>
+<td>Ex) Player&#39;s country code. ex) <code>CH</code>.</td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument'><code>onError</code> argument</h3>
@@ -1408,8 +1712,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -1438,7 +1742,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String / Null</td>
+<td><span class="d-type string">String</span> / Null</td>
 <td><code>null</code> if player is not signed in.</td>
 </tr>
 </tbody></table>
@@ -1450,8 +1754,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String*</td>
-<td>Required. User&#39;s country code</td>
+<td><span class="d-type string">String</span>*</td>
+<td>Required. Player&#39;s country code</td>
 </tr>
 </tbody></table>
 <h3 id='currentpassword-argument'><code>currentPassword</code> argument</h3>
@@ -1462,8 +1766,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
-<td>User&#39;s current password. At least 8, and up to 50 characters</td>
+<td><span class="d-type string">String</span></td>
+<td>Player&#39;s current password. At least 8, and up to 50 characters</td>
 </tr>
 </tbody></table>
 <h3 id='newpassword-argument'><code>newPassword</code> argument</h3>
@@ -1474,8 +1778,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
-<td>New password that user set to change. At least 8, and up to 50 characters</td>
+<td><span class="d-type string">String</span></td>
+<td>New password that player set to change. At least 8, and up to 50 characters</td>
 </tr>
 </tbody></table>
 <h3 id='oncomplete-argument'><code>onComplete</code> argument</h3>
@@ -1486,7 +1790,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1498,8 +1802,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -1538,7 +1842,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1550,8 +1854,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -1560,9 +1864,9 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <blockquote>
 <p>PLAYER.GETMYPOC( onComplete, onError )</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETMYPOC</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">poc</span><span class="p">){</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETMYPOC</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">balance</span><span class="p">){</span>
     <span class="c1">//onComplete</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'res'</span><span class="p">,</span> <span class="nx">poc</span><span class="p">)</span> <span class="c1">//4</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'res'</span><span class="p">,</span> <span class="nx">balance</span><span class="p">)</span> <span class="c1">//4</span>
 <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//onError</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
@@ -1579,7 +1883,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1594,9 +1898,9 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number / null</td>
-<td>poc</td>
-<td>POC balance user currently has. Returns <code>null</code>, if user has not done phone verification.</td>
+<td><span class="d-type number">Number</span> / null</td>
+<td>balance</td>
+<td>POC balance player currently has. Returns <code>null</code>, if player has not done phone verification.</td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument-4'><code>onError</code> argument</h3>
@@ -1607,63 +1911,27 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
 <p>See <a href="#errors">Errors</a> menu</p>
-<h2 id='player-getmessage'>PLAYER.GETMESSAGE</h2>
+<h2 id='player-countnewmessages'>PLAYER.COUNTNEWMESSAGES</h2>
 <blockquote>
-<p>PLAYER.GETMESSAGE( limit, page, onComplete, onError )`</p>
+<p>PLAYER.COUNTNEWMESSAGES( onComplete, onError )</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETMESSAGE</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">limit</span><span class="p">,</span> <span class="nx">pagebalance</span><span class="p">,</span> <span class="nx">hasNext</span><span class="p">){</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">COUNTNEWMESSAGES</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">amount</span><span class="p">){</span>
     <span class="c1">//onComplete</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">limit</span><span class="p">,</span> <span class="nx">pagebalance</span><span class="p">,</span> <span class="nx">hasNext</span><span class="p">);</span>
-<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'res'</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span> <span class="c1">//4</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//onError</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre>
-<blockquote>
-<p><code>notification</code> object</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"notificationno"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Notice Title"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Notice Description"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"notificationtype"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"pocamount"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"registdate"</span><span class="p">:</span><span class="mi">1523976927</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>PLAYER.GETMESSAGE( limit, page, onComplete, onError )</code></p>
+<p><code>PLAYER.COUNTNEWMESSAGES(onComplete, onError)</code></p>
 
-<p>Get messages for user</p>
-<h3 id='limit-argument'><code>limit</code> argument</h3>
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Number / null</td>
-<td>Amount of messages in a page. default 10</td>
-</tr>
-</tbody></table>
-<h3 id='page-argument'><code>page</code> argument</h3>
-<table><thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Number / null</td>
-<td>Page number to laod. default 1</td>
-</tr>
-</tbody></table>
+<p>Check if user has new messages or not. It returns amount of new(unread) messages.</p>
 <h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
@@ -1672,7 +1940,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1687,19 +1955,158 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
-<td>currentPage</td>
-<td>Current page number</td>
+<td><span class="d-type number">Number</span></td>
+<td>amount</td>
+<td>Total number of new/unread messages. 0, if none.</td>
 </tr>
+</tbody></table>
+<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<table><thead>
 <tr>
-<td>Array</td>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-getmessage'>PLAYER.GETMESSAGE</h2>
+<blockquote>
+<p>PLAYER.GETMESSAGE( limit, page, onComplete, onError )`</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">GETMESSAGE</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">list</span><span class="p">,</span> <span class="nx">hasNext</span><span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="nx">list</span><span class="p">,</span> <span class="nx">hasNext</span><span class="p">);</span>  <span class="c1">// success (see below for list), true</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p><code>notification</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"notificationno"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notificationtype"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Notice Title"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Notice Description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pocamount"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isread"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"registdate"</span><span class="p">:</span><span class="mi">1523976927</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><code>messages</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"messageboxno"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"messageboxtype"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"winnertype"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Message Title"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Message Description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isread"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"registdate"</span><span class="p">:</span><span class="mi">1523976927</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><code>prizes</code> object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"prizeno"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"prizetype"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Prize Title"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"Prize Description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"isread"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"registdate"</span><span class="p">:</span><span class="mi">1523976927</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expiredate"</span><span class="p">:</span><span class="mi">1523976927</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>PLAYER.GETMESSAGE( limit, page, onComplete, onError )</code></p>
+
+<p>Get player&#39;s messages</p>
+<h3 id='limit-argument'><code>limit</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type number">Number</span> / null</td>
+<td>Amount of messages to display in a page. default 10</td>
+</tr>
+</tbody></table>
+<h3 id='page-argument'><code>page</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type number">Number</span> / null</td>
+<td>Page number to load. default 1</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+
+<p><code>onComplete</code> returns belows.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type object">Object</span></td>
 <td>list</td>
-<td>List of notifications. See <code>notification</code> object below.</td>
+<td>List of messages. See <code>list</code> object below.</td>
 </tr>
 <tr>
-<td>Boolean</td>
+<td><span class="d-type bool">Boolean</span></td>
 <td>hasNext</td>
 <td><code>true</code> there are more pages. <code>false</code> there is no more pages.</td>
+</tr>
+</tbody></table>
+<h3 id='list-object'><code>list</code> object</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type array">Array</span></td>
+<td>notices</td>
+<td>List of notice object</td>
+</tr>
+<tr>
+<td><span class="d-type array">Array</span></td>
+<td>messages</td>
+<td>List of message object</td>
+</tr>
+<tr>
+<td><span class="d-type array">Array</span></td>
+<td>prizes</td>
+<td>List of prize object</td>
 </tr>
 </tbody></table>
 <h3 id='notification-object'><code>notification</code> object</h3>
@@ -1711,29 +2118,34 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>notificationno</td>
 <td>Notification number. Unique.</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
+<td>notificationtype</td>
+<td>Notification type. <code>1</code> : system notice, <code>2</code> : reward via eSports</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
 <td>title</td>
 <td>Title</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>description</td>
 <td>Description</td>
 </tr>
 <tr>
-<td>String</td>
-<td>notificationtype</td>
-<td>Notification type. <code>1</code> : system notice, <code>2</code> : title</td>
-</tr>
-<tr>
-<td>String\Null</td>
+<td><span class="d-type string">String</span>\Null</td>
 <td>pocamount</td>
 <td>POC amount</td>
+</tr>
+<tr>
+<td><span class="d-type Bool">Boolean</span></td>
+<td>isread</td>
+<td>Status whether the message is read or not. <code>true</code> if it&#39;s read, otherwise <code>false</code></td>
 </tr>
 <tr>
 <td>Timestamp</td>
@@ -1741,7 +2153,95 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <td>Registered date</td>
 </tr>
 </tbody></table>
-<h3 id='onerror-argument-5'><code>onError</code> argument</h3>
+<h3 id='messages-object'><code>messages</code> object</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>messageboxno</td>
+<td>Message number. Unique.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>messageboxtype</td>
+<td>Message type. <code>1</code> : system notice, <code>2</code> : reward via eSports</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>winnertype</td>
+<td>Winner type. <code>1</code> : Team winner, <code>2</code> : Final winner eSports<br>This is for eSports games.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>title</td>
+<td>Title</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>description</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><span class="d-type Bool">Boolean</span></td>
+<td>isread</td>
+<td>Status whether the message is read or not. <code>true</code> if it&#39;s read, otherwise <code>false</code></td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>registdate</td>
+<td>Registered date</td>
+</tr>
+</tbody></table>
+<h3 id='prizes-object'><code>prizes</code> object</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>prizeno</td>
+<td>Prize number. Unique.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>prizetype</td>
+<td>Prize type. <code>1</code> : system notice, <code>2</code> : reward via eSports</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>title</td>
+<td>Title</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>description</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><span class="d-type Bool">Boolean</span></td>
+<td>isread</td>
+<td>Status whether the message is read or not. <code>true</code> if it&#39;s read, otherwise <code>false</code></td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>registdate</td>
+<td>Registered date</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>expiredate</td>
+<td>Expire date</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1749,8 +2249,97 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-updatemessage'>PLAYER.UPDATEMESSAGE</h2>
+<blockquote>
+<p>PLAYER.UPDATEMESSAGE( action, mode, messageNo, options, onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">UPDATEMESSAGE</span><span class="p">(</span><span class="s1">'read'</span><span class="p">,</span> <span class="s1">'msg'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">{},</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//onError</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PLAYER.UPDATEMESSAGE( action, mode, messageNo, options, onComplete, onError )</code></p>
+
+<p>Check if user has new messages or not. It returns amount of new(unread) messages.</p>
+<h3 id='action-argument'><code>action</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td><code>read</code> to set a message as read. <br> <code>delete</code> to delete a message.</td>
+</tr>
+</tbody></table>
+<h3 id='mode-argument'><code>mode</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td><code>noti</code> for notification <br><code>msg</code> for message <br><code>prize</code> for prize</td>
+</tr>
+</tbody></table>
+<h3 id='messageno-argument'><code>messageNo</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>Notification, message, or prize unique number.</td>
+</tr>
+</tbody></table>
+<h3 id='options-argument'><code>options</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type object">Object</span></td>
+<td>Not used yet.</td>
+</tr>
+</tbody></table>
+<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -1786,8 +2375,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </span></code></pre>
 <p><code>PLAYER.GETITEM(onComplete, onError)</code></p>
 
-<p>Get user’s item list</p>
-<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<p>Get player’s item list</p>
+<h3 id='oncomplete-argument-7'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1795,7 +2384,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -1810,7 +2399,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td>list</td>
 <td>List of <code>item</code> object. See below</td>
 </tr>
@@ -1824,32 +2413,32 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemshopno</td>
 <td>Item shop number</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>title</td>
 <td>Item title</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>subtitle</td>
 <td>Item subtitle</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemimage</td>
 <td>Item image url</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>price</td>
 <td>Item price</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemtype</td>
 <td><code>1</code> : All mode (single and multi play)</td>
 </tr>
@@ -1864,7 +2453,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <td><code>3</code> : Multi play</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemstatus</td>
 <td><code>1</code> : Not yet on market</td>
 </tr>
@@ -1874,17 +2463,17 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 <td><code>2</code> : On market</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemlevel</td>
 <td>Item level</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemexp</td>
 <td>Item experience</td>
 </tr>
 </tbody></table>
-<h3 id='onerror-argument-6'><code>onError</code> argument</h3>
+<h3 id='onerror-argument-8'><code>onError</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1892,8 +2481,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -1926,7 +2515,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </code></pre>
 <p><code>PLAYER.UPDATEITEM( items, onComplete, onError )</code></p>
 
-<p>Update user’s item list</p>
+<p>Update player’s item list</p>
 <h3 id='items-argument'><code>items</code> argument</h3>
 <table><thead>
 <tr>
@@ -1935,11 +2524,11 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Array</td>
-<td>Array of containing item object.It should include not only items to update, but also the other items those user have. Item object is from <a href="#item-getgameitem">ITEM.GETGAMEITEM</a></td>
+<td><span class="d-type array">Array</span></td>
+<td>Array of containing item object.It should include not only items to update, but also the other items those player have. Item object is from <a href="#item-getgameitem">ITEM.GETGAMEITEM</a></td>
 </tr>
 </tbody></table>
-<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
+<h3 id='oncomplete-argument-8'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1947,11 +2536,11 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
-<h3 id='onerror-argument-7'><code>onError</code> argument</h3>
+<h3 id='onerror-argument-9'><code>onError</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -1959,14 +2548,66 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
+</tr>
+</tbody></table>
+
+<p>See <a href="#errors">Errors</a> menu</p>
+<h2 id='player-sendverificationemail'>PLAYER.SENDVERIFICATIONEMAIL</h2>
+<blockquote>
+<p>PLAYER.SENDVERIFICATIONEMAIL( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">SENDVERIFICATIONEMAIL</span><span class="p">(</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PLAYER.SENDVERIFICATIONEMAIL( onComplete, onError )</code></p>
+
+<p>Send an email that contains verification link. This API is only for players who registered before Oct. 2018 and have not verified.</p>
+<h3 id='oncomplete-argument-9'><code>onComplete</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when call is success.</td>
+</tr>
+</tbody></table>
+<h3 id='onerror-argument-10'><code>onError</code> argument</h3>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
 <p>See <a href="#errors">Errors</a> menu</p>
 <h2 id='player-signout'>PLAYER.SIGNOUT</h2>
-<p><code>PLAYER.SIGNOUT()</code></p>
+<blockquote>
+<p>PLAYER.SIGNOUT( onComplete, onError )</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">PLAYER</span><span class="p">.</span><span class="nx">SIGNOUT</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">onComplete</span><span class="p">,</span> <span class="nx">onError</span> <span class="p">){</span>
+    <span class="c1">//onComplete</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<p><code>PLAYER.SIGNOUT( onComplete, onError )</code></p>
+
+<p>Remove user’s session data</p>
 <h1 id='game-api'>Game API</h1><h2 id='game-start'>GAME.START</h2>
 <blockquote>
 <p>GAME.START( onComplete, onError )</p>
@@ -1990,7 +2631,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2002,8 +2643,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2026,7 +2667,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </code></pre>
 <p><code>GAME.REPORTSCORE(score, type, code, onComplete, onError)</code></p>
 
-<p>Call when a game has finished to record the score to leaderboard</p>
+<p>Call when a game has finished to record the score to leaderboard. User’s sign in status can change after API call.</p>
 <h3 id='score-argument'><code>score</code> argument</h3>
 <table><thead>
 <tr>
@@ -2035,7 +2676,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>Score to send</td>
 </tr>
 </tbody></table>
@@ -2048,7 +2689,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td><code>0</code></td>
 <td>Single play</td>
 </tr>
@@ -2067,7 +2708,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td><code>0</code></td>
 <td>Single</td>
 </tr>
@@ -2095,7 +2736,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2110,7 +2751,7 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Number / Null</td>
+<td><span class="d-type number">Number</span> / Null</td>
 <td>rewardPOC</td>
 <td>Amount of POC as a reward. If this argument’s value is not <code>null</code>, either you can use <a href="#ui-reward"><code>UI.REWARD</code></a> API or build your own UI using <a href="#getrewardpoc"><code>GETREWARDPOC</code></a></td>
 </tr>
@@ -2123,8 +2764,8 @@ Instead of this API, you can use <a href="#ui-reward"><code>UI.REWARD</code></a>
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2163,27 +2804,27 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String / Null</td>
+<td><span class="d-type string">String</span> / Null</td>
 <td>data1</td>
 <td>Any data. Send <code>null</code> if there is nothing to save.</td>
 </tr>
 <tr>
-<td>String / Null</td>
+<td><span class="d-type string">String</span> / Null</td>
 <td>data2</td>
 <td>Any data. Send <code>null</code> if there is nothing to save.</td>
 </tr>
 <tr>
-<td>String / Null</td>
+<td><span class="d-type string">String</span> / Null</td>
 <td>data3</td>
 <td>Any data. Send <code>null</code> if there is nothing to save.</td>
 </tr>
 <tr>
-<td>String / Null</td>
+<td><span class="d-type string">String</span> / Null</td>
 <td>data4</td>
 <td>Any data. Send <code>null</code> if there is nothing to save.</td>
 </tr>
 <tr>
-<td>String / Null</td>
+<td><span class="d-type string">String</span> / Null</td>
 <td>data5</td>
 <td>Any data. Send <code>null</code> if there is nothing to save.</td>
 </tr>
@@ -2196,7 +2837,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2208,8 +2849,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2237,7 +2878,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2252,27 +2893,27 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>data1</td>
 <td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>data2</td>
 <td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>data3</td>
 <td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>data4</td>
 <td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>data5</td>
 <td>Any data. When it&#39;s empty, Empty string(<code>&#39;&#39;</code>) will be returned.</td>
 </tr>
@@ -2285,8 +2926,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2306,7 +2947,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 <span class="p">});</span>
 </code></pre>
 <blockquote>
-<p>Value of <code>leaderboard</code></p>
+<p>Value of <code>leaderboard</code> for <b>normal</b> mode</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
    </span><span class="s2">"eventtile"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -2325,7 +2966,55 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p><code>entry</code> object</p>
+<p>Value of <code>leaderboard</code> for <b>eSports</b> mode</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+   </span><span class="s2">"eventtile"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"startdate"</span><span class="p">:</span><span class="mi">1533254400</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"enddate"</span><span class="p">:</span><span class="mi">1564790400</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"gameid"</span><span class="p">:</span><span class="s2">"yVvIYCpw"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"gameesportsno"</span><span class="p">:</span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"gametitle"</span><span class="p">:</span><span class="s2">"Cricket Championship for MicroMax"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"durationno"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"remaintime"</span><span class="p">:</span><span class="w"> </span><span class="mi">234550</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"bgimage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">..com</span><span class="se">\/</span><span class="s2">upload</span><span class="se">\/</span><span class="s2">game</span><span class="se">\/</span><span class="s2">pic</span><span class="se">\/</span><span class="s2">1.png"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"stageno"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"myleaderno"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"groupno"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"leadercount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"leader"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"leaderdata"</span><span class="p">:[</span><span class="w">  
+         </span><span class="err">//see</span><span class="w"> </span><span class="err">below</span><span class="w"> </span><span class="err">'entry'</span><span class="w"> </span><span class="err">object</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"rewards"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+           </span><span class="s2">"reward_en"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"title_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users : $60   50 POC"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"title_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP 3 of each Group :50 POC "</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users will be selected …...."</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="s2">"reward_de"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"title_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users : $60   50 POC"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"title_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP 3 of each Group :50 POC "</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users will be selected …...."</span><span class="w">
+
+           </span><span class="p">},</span><span class="w">
+           </span><span class="s2">"reward_zh"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"title_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users : $60   50 POC"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"title_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP 3 of each Group :50 POC "</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users will be selected …...."</span><span class="w">
+
+           </span><span class="p">},</span><span class="w">
+           </span><span class="s2">"reward_ko"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"title_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users : $60   50 POC"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"title_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOP 3 of each Group :50 POC "</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Final 10 users will be selected …...."</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+       </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><code>entry</code> object. Values are the same in both mode.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">  
     </span><span class="s2">"ranking"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w">
@@ -2354,7 +3043,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Boolean</td>
+<td><span class="d-type bool">Boolean</span></td>
 <td><code>true</code>, get leaderboard data from server.</td>
 </tr>
 <tr>
@@ -2370,13 +3059,17 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
 
-<p><code>onComplete</code> returns belows.</p>
+<p><code>onComplete</code> returns belows. There are two ways the value returned.<br> Normal mode and eSports mode</p>
 <h4 id='leaderboard-argument'><code>leaderboard</code> argument</h4>
+<ol>
+<li>normal mode</li>
+</ol>
+
 <table><thead>
 <tr>
 <th>Type</th>
@@ -2386,43 +3079,183 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>myranking</td>
 <td></td>
 <td>User&#39;s rank</td>
 </tr>
 <tr>
-<td>Object</td>
+<td><span class="d-type object">Object</span></td>
 <td>leader</td>
 <td></td>
 <td>Leaderboard data</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td></td>
 <td>rowcount</td>
 <td>Total number of entries</td>
 </tr>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td></td>
 <td>leaderdata</td>
 <td>Leaderboard list data. See <code>entry</code> object below</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>type</td>
 <td></td>
 <td>Leaderboard type. <code>0</code> : Win, <code>1</code> : Score</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>totalcount</td>
 <td></td>
 <td>Total number of entries</td>
 </tr>
 </tbody></table>
+
+<ol>
+<li>eSports mode</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>eventtitle</td>
+<td></td>
+<td>Its value will be returned if event exists. Otherwise, empty string(&quot;&quot;)</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>gameid</td>
+<td></td>
+<td>Game id of current game</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>gameesportsno</td>
+<td></td>
+<td>Game id of current game</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>gametitle</td>
+<td></td>
+<td>Title of current eSports game</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>durationno</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>remaintime</td>
+<td></td>
+<td>Remaining time of this duration. in seconds.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>bgimage</td>
+<td></td>
+<td>Background image to decorate current game&#39;s status. Developers can use their own image.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td>stageno</td>
+<td></td>
+<td>Stage number for this duration.</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>myleaderno</td>
+<td></td>
+<td>Number of my leaderboard.</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>groupno</td>
+<td></td>
+<td>Group number of my leaderboard.</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td>leadercount</td>
+<td></td>
+<td>Total number of leaderboard entries.</td>
+</tr>
+<tr>
+<td><span class="d-type object">Object</span></td>
+<td>leader</td>
+<td></td>
+<td>This one has below properties.</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span></td>
+<td></td>
+<td>rowcount</td>
+<td>Total number of leaderboard entries.</td>
+</tr>
+<tr>
+<td><span class="d-type array">Array</span></td>
+<td></td>
+<td>leaderdata</td>
+<td>Leaderboard list data. See <code>entry</code> object below</td>
+</tr>
+<tr>
+<td><span class="d-type array">Array</span></td>
+<td>rewards</td>
+<td></td>
+<td>list of <code>reward</code> object. See below <code>reward</code> object.</td>
+</tr>
+</tbody></table>
+<h4 id='reward-object'><code>reward</code> object</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Key</th>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type object">Object</span></td>
+<td>reward_(language code, ex) <code>en</code>)</td>
+<td></td>
+<td>This one has below properties.</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td></td>
+<td>title_1</td>
+<td>Title</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td></td>
+<td>title_2</td>
+<td>Title</td>
+</tr>
+<tr>
+<td><span class="d-type string">String</span></td>
+<td></td>
+<td>description</td>
+<td>Description</td>
+</tr>
+</tbody></table>
 <h4 id='entry-object'><code>entry</code> object</h4>
+<p>Both normal and eSports mode are the same. </p>
+
 <table><thead>
 <tr>
 <th>Type</th>
@@ -2431,32 +3264,32 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>ranking</td>
 <td>Entry user&#39;s ranking</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>nickname</td>
 <td>Entry user&#39;s nickname</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>gamescore</td>
 <td>Entry user&#39;s gamescore</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>isme</td>
 <td><code>0</code> : Not user, <code>1</code> : User</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>locale</td>
 <td>Entry user&#39;s locale</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>picture</td>
 <td>Entry user&#39;s profile image. <code>&#39;&#39;</code> for user who doesn&#39;t have profile image</td>
 </tr>
@@ -2469,8 +3302,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2512,7 +3345,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2526,7 +3359,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td>List of <code>item</code> object</td>
 </tr>
 </tbody></table>
@@ -2539,32 +3372,32 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemshopno</td>
 <td>Item shop number</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>title</td>
 <td>Item title</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>subtitle</td>
 <td>Item subtitle</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemimage</td>
 <td>Item image url</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>price</td>
 <td>Item price</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>itemtype</td>
 <td><code>1</code> : All mode</td>
 </tr>
@@ -2579,7 +3412,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 <td><code>3</code> : multi play</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>marketyn</td>
 <td><code>1</code> : Using item in blockchain</td>
 </tr>
@@ -2589,7 +3422,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 <td><code>2</code> : Not using item in blockchain</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>productid</td>
 <td>Product ID from EmojiGames itemshop. Empty string(<code>&#39;&#39;</code>) when <code>marketyn</code> is <code>0</code></td>
 </tr>
@@ -2602,8 +3435,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2648,7 +3481,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2663,7 +3496,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td>list</td>
 <td>List of <code>item</code> object. Same from <a href="#player-getitem"><code>PLAYER.GETITEM</code></a></td>
 </tr>
@@ -2676,8 +3509,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2717,7 +3550,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td>List of <code>item</code> object to send to server. Same item from <a href="#item-getgameitem">ITEM.GETGAMEITEM</a> API</td>
 </tr>
 </tbody></table>
@@ -2729,7 +3562,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2741,14 +3574,16 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
 <p>See <a href="#errors">Errors</a> menu</p>
 <h1 id='ui-api'>UI API</h1>
-<p>Display UI such as leaderboard, sign in/up so on on screen</p>
+<p>Display UI on screen such as leaderboard, sign in/up and tokenshop. Please note that … <br>
+1. animation duration of modal open and closing is 400ms. This may close a modal that is called during the animation phase. <br>
+2. User’s sign in status can be changed after UI API call. For example, non signed in user can sign in/up when the modal is open, because some contents are required sign in/up and the UI will prompt the user to sign in/up modal.<br></p>
 <h2 id='ui-signup'>UI.SIGNUP</h2>
 <blockquote>
 <p>UI.SIGNUP( onComplete, onError )</p>
@@ -2773,7 +3608,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2788,12 +3623,12 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Object</td>
+<td><span class="d-type object">Object</span></td>
 <td>player</td>
 <td>Player info. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
 </tr>
 <tr>
-<td>Number / Null</td>
+<td><span class="d-type number">Number</span> / Null</td>
 <td>poc</td>
 <td><code>null</code> if user has not done phone verification. Otherwise POC balance.</td>
 </tr>
@@ -2806,8 +3641,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2836,7 +3671,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2851,12 +3686,12 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Object</td>
+<td><span class="d-type object">Object</span></td>
 <td>player</td>
 <td>Player info. See <a href="#player-getinfo">PLAYER.GETINFO</a></td>
 </tr>
 <tr>
-<td>Number / Null</td>
+<td><span class="d-type number">Number</span> / Null</td>
 <td>poc</td>
 <td><code>null</code> if user has not done phone verification. Otherwise POC balance.</td>
 </tr>
@@ -2869,17 +3704,17 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
 <p>See <a href="#errors">Errors</a> menu</p>
 <h2 id='ui-myprofile'>UI.MYPROFILE</h2>
 <blockquote>
-<p>UI.MYPROFILE( onSignOut, onError )</p>
+<p>UI.MYPROFILE( onComplete, onError )</p>
 </blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">MYPROFILE</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">MYPROFILE</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isSignedIn</span><span class="p">){</span>
     <span class="c1">//onSignout</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
 <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
@@ -2888,10 +3723,10 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 <span class="p">})</span>
 </code></pre>
-<p><code>UI.MYPROFILE( onSignOut, onError )</code></p>
+<p><code>UI.MYPROFILE( onComplete, onError )</code></p>
 
-<p>Display my profile modal</p>
-<h3 id='onsignout-argument'><code>onSignOut</code> argument</h3>
+<p>Display my profile modal. Please note that user can sign out and change profile info while using this UI. </p>
+<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -2899,8 +3734,20 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when user clicks <code>sign out</code> button.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when user clicks <code>sign out</code> button, and edit profile and closes it.<br>It returns below argument.</td>
+</tr>
+</tbody></table>
+<h4 id='issignedin-argument'><code>isSignedIn</code> argument</h4>
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><span class="d-type bool">Boolean</span></td>
+<td><code>true</code> if user kept the session. Otherwise, <code>false</code></td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument-3'><code>onError</code> argument</h3>
@@ -2911,8 +3758,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2933,7 +3780,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 <p><code>UI.EDITPROFILE( onComplete, onError )</code></p>
 
 <p>Display my profile edit form modal</p>
-<h3 id='oncomplete-argument-3'><code>onComplete</code> argument</h3>
+<h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -2941,7 +3788,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -2953,8 +3800,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2980,8 +3827,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -2992,7 +3839,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">pocAmount</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
 
-<span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">REWARD</span><span class="p">(</span> <span class="nx">pocAmount</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">pasdk</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">REWARD</span><span class="p">(</span> <span class="nx">POCamount</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">POCamount</span><span class="p">,</span> <span class="nx">POCbalance</span><span class="p">,</span> <span class="nx">itemAmount</span><span class="p">){</span>
     <span class="c1">//onComplete</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span>
 <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
@@ -3012,11 +3859,11 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>POC amount to receive. This value is from <code>onComplete</code> argument of <a href="#game-reportscore"><code>GAME.REPORTSCORE</code></a></td>
 </tr>
 </tbody></table>
-<h3 id='oncomplete-argument-4'><code>onComplete</code> argument</h3>
+<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -3024,7 +3871,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when call is success.</td>
 </tr>
 </tbody></table>
@@ -3039,9 +3886,19 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>POCamount</td>
-<td>Reward POC after reCaptcha verification</td>
+<td>Rewarded POC</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span> / Null</td>
+<td>POCbalance</td>
+<td>Number is returned, when user purchased something from POC Shop. Otherwise, null. The balance doesn’t include POCamount.</td>
+</tr>
+<tr>
+<td><span class="d-type number">Number</span> / Null</td>
+<td>itemAmount</td>
+<td>Number is returned, when user purchased something from POC Shop. Otherwise, null. Item that user purchased by POC.</td>
 </tr>
 </tbody></table>
 <h3 id='onerror-argument-6'><code>onError</code> argument</h3>
@@ -3052,8 +3909,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -3079,8 +3936,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -3110,7 +3967,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when user click ‘x’(close) button <strong>after purchasing item(s)</strong>.</td>
 </tr>
 </tbody></table>
@@ -3125,12 +3982,12 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>POC</td>
 <td>POC balance after purchase</td>
 </tr>
 <tr>
-<td>Number</td>
+<td><span class="d-type number">Number</span></td>
 <td>purchsedItem</td>
 <td>Amount of items purchased in the modal</td>
 </tr>
@@ -3143,8 +4000,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -3198,17 +4055,17 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>title</td>
 <td>Modal title</td>
 </tr>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>message</td>
 <td>Modal message</td>
 </tr>
 <tr>
-<td>Array</td>
+<td><span class="d-type array">Array</span></td>
 <td>buttons</td>
 <td>Text for buttons. Up to two buttons. Contains <code>button</code> object</td>
 </tr>
@@ -3222,12 +4079,12 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>String</td>
+<td><span class="d-type string">String</span></td>
 <td>text</td>
 <td>Button text</td>
 </tr>
 </tbody></table>
-<h3 id='oncomplete-argument-5'><code>onComplete</code> argument</h3>
+<h3 id='oncomplete-argument-6'><code>onComplete</code> argument</h3>
 <table><thead>
 <tr>
 <th>Type</th>
@@ -3235,7 +4092,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
+<td><span class="d-type func">Function</span></td>
 <td>Triggered when user click <code>OK</code> button.</td>
 </tr>
 </tbody></table>
@@ -3247,8 +4104,8 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 </tr>
 </thead><tbody>
 <tr>
-<td>Function</td>
-<td>Triggered when error occured.</td>
+<td><span class="d-type func">Function</span></td>
+<td>Triggered when error occurs.</td>
 </tr>
 </tbody></table>
 
@@ -3284,7 +4141,7 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 <tr>
 <td>200</td>
 <td>Modal closed</td>
-<td>Modal closed</td>
+<td>MODAL_CLOSED</td>
 <td>Modal closed.</td>
 </tr>
 <tr>
@@ -3304,12 +4161,6 @@ Each `data(n)` can store up to 13,000 characters, if the character takes 1 byte 
 <td></td>
 <td>LACK_OF_POC</td>
 <td>Insufficient amount of POC.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>FAILED_TO_PASS_RECAPTCHA</td>
-<td>Failed to pass the reCAPTCHA, please try again.</td>
 </tr>
 <tr>
 <td></td>
