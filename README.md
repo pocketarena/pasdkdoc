@@ -16,3 +16,6 @@
 ```shell
 ./deploy.sh
 ```
+
+7. The CNAME should be updated
+`pasdkdoc.pocketarena.com`
