@@ -18,5 +18,6 @@
 ```
 
 7. Once finished the deploying document, the CANME will be reset. 
-So, it needs to update the CNAME again in the setting
+
+So, it needs to update the CNAME again in the setting, the target branch should be the *gh-pages*
 `pasdkdoc.pocketarena.com`
