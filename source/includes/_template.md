@@ -31,6 +31,6 @@ Type | Argument | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu

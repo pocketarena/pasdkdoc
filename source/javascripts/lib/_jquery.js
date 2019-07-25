@@ -3893,7 +3893,7 @@ jQuery.fn.ready = function( fn ) {
 
 jQuery.extend( {
 
-	// Is the DOM ready to be used? Set to true once it occurs.
+	// Is the DOM ready to be used? Set to true once it occurrs.
 	isReady: false,
 
 	// A counter to track how many items to wait for before

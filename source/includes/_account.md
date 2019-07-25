@@ -32,8 +32,6 @@ pasdk.PLAYER.GETINFO()    //see below
 ```json
 {
     "rewardExp" : 87,
-    "countryCode" : "CH",
-    "country" : "Switzerland",
     "isAnonymous": true
 }
 ```
@@ -56,35 +54,34 @@ Type | Key | Key | Description
 <span class="d-type string">String</span> | email | | Player email
 <span class="d-type string">String</span> | idType | | Determine if it's SNS account or email account<br> `email` or `sns`
 <span class="d-type string">String</span> | image | | Player profile image
-<span class="d-type bool">Boolean</span> | isVerified | | `true` if player finished phone/email verification
+<span class="d-type bool">Boolean</span> | isVerified | | `true` if player finished email verification
+<span class="d-type string">String</span> | languageCode | | Player language code
 <span class="d-type number">Number</span> | level | | Player level
 <span class="d-type string">String</span> | nickname | | Player nickname
 <span class="d-type object">Object</span> | rewardExp | | Player's POC and level exp info
-<span class="d-type number">Number</span> | | POC | Player's POC amount
-<span class="d-type number">Number</span> | | exp | Player's level exp in percent
+<span class="d-type number">Number</span> | | POC | POC amount that player will get when his/her level is up.
+<span class="d-type number">Number</span> | | exp | Player's level exp in percent, max 99.
 
 ### `player` object : for player who is not signed in
 Type | Key | Description
 --------- | ------- | -----------
-<span class="d-type number">Number</span> | rewardExp | Player's level exp info
+<span class="d-type number">Number</span> | rewardExp | Player's level exp info, in percent, max 99.
 <span class="d-type bool">Boolean</span> | isAnonymous | `true` always, since this key is for non-signed player
-<span class="d-type string">String</span> | country | Ex) Player's country. ex) `Switzerland`.
-<span class="d-type string">String</span> | countryCode | Ex) Player's country code. ex) `CH`.
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
 
 ## PLAYER.SETINFO
 
-> PLAYER.SETINFO( nickname, countryCode, currentPassword, newPassword, onComplete, onError )
+> PLAYER.SETINFO( nickname, countryCode, languageCode, currentPassword, newPassword, onComplete, onError )
 
 ```javascript
-pasdk.PLAYER.SETINFO('Brandon Jeong', 'KR', '12341234', '12341234', 
+pasdk.PLAYER.SETINFO('Brandon Jeong', 'KR', 'KR', '12341234', '12341234', 
     function(){
     //onComplete
     console.log('success');
@@ -94,7 +91,7 @@ pasdk.PLAYER.SETINFO('Brandon Jeong', 'KR', '12341234', '12341234',
 });
 ```
 
-`PLAYER.SETINFO(nickname, countryCode, currentPassword, newPassword, onComplete, onError)`
+`PLAYER.SETINFO(nickname, countryCode, languageCode, currentPassword, newPassword, onComplete, onError)`
 
 Set player’s information such as email, name, birthday, and gender.
 
@@ -107,6 +104,11 @@ Set player’s information such as email, name, birthday, and gender.
 Type | Description
 ------- | -----------
 <span class="d-type string">String</span>* | Required. Player's country code
+
+### `languageCode` argument
+Type | Description
+------- | -----------
+<span class="d-type string">String</span>* | Required. Player's language code. Supported languages `EN`, `DE`, and `KR`
 
 ### `currentPassword` argument
 Type | Description
@@ -126,7 +128,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -160,7 +162,7 @@ pasdk.PLAYER.GETACTIVITY(function(activity){
 
 `PLAYER.GETACTIVITY(onComplete, onError)`
 
-Get player’s PA activity statistic such as number of wins, lose, and last access time.
+Get player’s PA activity statistic such as number of wins, loses, and last access time.
 
 ### `onComplete` argument
 Type | Description
@@ -172,7 +174,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -205,12 +207,12 @@ Type | Description
 
 Type | Argument | Description
 --------- | ------- | -----------
-<span class="d-type number">Number</span> / null | balance | POC balance player currently has. Returns `null`, if player has not done phone verification.
+<span class="d-type number">Number</span> / null | balance | POC balance player currently has. Returns `null`, if player has not done verification.
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -247,7 +249,7 @@ Type | Argument | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -380,7 +382,7 @@ Timestamp | expiredate | Expire date
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -431,7 +433,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -502,7 +504,7 @@ Type | Key | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -553,7 +555,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -573,7 +575,7 @@ pasdk.PLAYER.SENDVERIFICATIONEMAIL( function(){
 
 `PLAYER.SENDVERIFICATIONEMAIL( onComplete, onError )`
 
-Send an email that contains verification link. This API is only for players who registered before Oct. 2018 and have not verified.
+Send an email that contains verification link.
 
 
 ### `onComplete` argument
@@ -584,7 +586,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 

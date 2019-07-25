@@ -1,8 +1,9 @@
 # UI API
 
-Display UI on screen such as leaderboard, sign in/up and tokenshop. Please note that … <br>
+Display UI on screen such as leaderboard, login/sign up and tokenshop. Please note that … <br>
 1. animation duration of modal open and closing is 400ms. This may close a modal that is called during the animation phase. <br>
-2. User’s sign in status can be changed after UI API call. For example, non signed in user can sign in/up when the modal is open, because some contents are required sign in/up and the UI will prompt the user to sign in/up modal.<br>
+2. User’s login status can be changed after UI API call. For example, user who is not logged in can login or signup when the modal is open, because some contents are required login/sign up and the UI will prompt the user to login/sign up modal.<br>
+3. `.modal-overlay` is the wrapper element of the modal UI, and its `z-index` is 100.
 
 ## UI.SIGNUP
 
@@ -33,13 +34,13 @@ Type | Description
 Type | Argument | Description
 ----- | ------- | ------- 
 <span class="d-type object">Object</span> | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
-<span class="d-type number">Number</span> / Null | poc | `null` if user has not done phone verification. Otherwise POC balance.
+<span class="d-type number">Number</span> / Null | poc | `null` if user has not done verification. Otherwise POC balance.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -62,7 +63,7 @@ pasdk.UI.SIGNIN(function(player, poc){
 
 `UI.SIGNIN( onComplete, onError )`
 
-Display sign in modal
+Display login modal
 
 ### `onComplete` argument
 Type | Description
@@ -74,13 +75,13 @@ Type | Description
 Type | Argument | Description
 ----- | ------- | ------- 
 <span class="d-type object">Object</span> | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
-<span class="d-type number">Number</span> / Null | poc | `null` if user has not done phone verification. Otherwise POC balance.
+<span class="d-type number">Number</span> / Null | poc | `null` if user has not done verification. Otherwise POC balance.
 
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -117,7 +118,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -152,7 +153,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -178,23 +179,20 @@ Display my message box modal
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
 
+## UI.LEADERBOARD
 
-
-## UI.REWARD
-
-> UI.REWARD( POCamount, onComplete, onError )
+> UI.LEADERBOARD( onLogin, onError )
 
 ```javascript
-var pocAmount = 18;
-
-pasdk.UI.REWARD( POCamount, function(POCamount, POCbalance, itemAmount){
-    //onComplete
-    console.log('success')
+pasdk.UI.LEADERBOARD(function(player, poc){
+    // onLogin
+    // same as `UI.SIGNIN` or `UI.SIGNUP`'s `onComplete` argument
+    console.log('success', player, poc)     //success {...} 87568
 }, function (err) {
     //onError
     //ex) User clicked 'X'(close) button
@@ -202,63 +200,55 @@ pasdk.UI.REWARD( POCamount, function(POCamount, POCbalance, itemAmount){
 })
 ```
 
-`UI.REWARD( POCamount, onComplete, onError )`
+`UI.LEADERBOARD( onLogin, onError )`
 
-Display POC reward modal. This API is for `onComplete` argument of [`GAME.REPORTSCORE`](#game-reportscore)
+Display leaderboard modal. Note that there are two types of leaderboards, normal and eSports. These leaderboards have different layout and slightly different functions. User can login or sign up from eSports leaderboard. 
 
-### `POCamount` argument
+### `onLogin` argument
 Type | Description
 ----- | ------- 
-<span class="d-type number">Number</span> | POC amount to receive. This value is from `onComplete` argument of [`GAME.REPORTSCORE`](#game-reportscore)
+<span class="d-type func">Function</span> | Triggered when user sign up or login by clicking eSports leaderboard.
 
-### `onComplete` argument
-Type | Description
------ | ------- 
-<span class="d-type func">Function</span> | Triggered when call is success.
-
-`onComplete` returns belows.
+`onLogin` returns belows.
 
 Type | Argument | Description
 ----- | ------- | ------- 
-<span class="d-type number">Number</span> | POCamount | Rewarded POC
-<span class="d-type number">Number</span> / Null | POCbalance | Number is returned, when user purchased something from POC Shop. Otherwise, null. The balance doesn’t include POCamount.
-<span class="d-type number">Number</span> / Null | itemAmount | Number is returned, when user purchased something from POC Shop. Otherwise, null. Item that user purchased by POC.
-
+<span class="d-type object">Object</span> | player | Player info. See [PLAYER.GETINFO](#player-getinfo)
+<span class="d-type number">Number</span> / Null | poc | `null` if user has not done verification. Otherwise POC balance.
 
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
 
+## UI.TOGGLELEADERBOARD
 
-
-## UI.LEADERBOARD
-
-> UI.LEADERBOARD( onError )
+> UI.TOGGLELEADERBOARD( show )
 
 ```javascript
-pasdk.UI.LEADERBOARD(function (err) {
-    //onError
-    //ex) User clicked 'X'(close) button
-    console.log('err', err)
-})
+// Force to show the leaderboard
+pasdk.UI.TOGGLELEADERBOARD(true);
+
+// Force to hide the leaderboard
+pasdk.UI.TOGGLELEADERBOARD(false);   
+
+// Show the leaderboard if the leaderboard is hidden
+// Hide the leaderboard if the leaderboard is shown
+pasdk.UI.TOGGLELEADERBOARD();
 ```
 
-`UI.LEADERBOARD( onError )`
+`UI.TOGGLELEADERBOARD( show )`
 
-Display leaderboard modal
+Show/hide eSports leaderboard. This API works for only eSports leaderboard. So please make sure if the leaderboard type is eSports leaderboard and `UI.LEADERBOARD` is displayed. Note that the data is not refreshed.<br>
 
-### `onError` argument
+### `show` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
-
-See [Errors](#errors) menu
-
-
+<span class="d-type bool">Boolean</span> | `true`, force to show the leaderboard<br>`false`, force to hide the leaderboard
+<span class="d-type undefined">undefined</span> | Toggle the leaderboard
 
 
 ## UI.PATOKENSHOP
@@ -297,7 +287,7 @@ Type | Argument | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -361,11 +351,73 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
 
+## UI.SHARE
+
+> UI.SHARE( onComplete, onError )
+
+```javascript
+
+pasdk.UI.SHARE( function(){
+    //onComplete; nothing happens here
+}, function (err) {
+    //onError
+    //User clicked 'X'(close) button 
+    console.log('err', err)
+})
+```
+
+`UI.SHARE( onComplete, onError )`
+
+Display a SNS share dialog. Currently, below platforms are supported.
+
+* Whats app
+* FB Messenger
+* Kakao Talk
+* Line
+* Pinterest
+* Facebook
+* Twitter
+* VK
+* Wechat
+* QQ
+
+SDK create share links using below info. So please make sure if these are set up to the `index.html` file.
+
+* url : The game's url
+* image : Using `meta[property='og:image']` value
+* title : Using `title` tag's value.
+* description : Using `meta[property='og:description']` value
+
+### `onComplete` argument
+Type | Description
+----- | ------- 
+<span class="d-type func">Function</span> | This is currently not used.
+
+
+### `onError` argument
+Type | Description
+----- | ------- 
+<span class="d-type func">Function</span> | Triggered when the modal is closed.
+
+
+## UI.ESPORTSINFO
+
+> UI.ESPORTSINFO( onError )
+
+```javascript
+pasdk.UI.ESPORTSINFO( function(){
+    // modal is closed
+})
+```
+
+`UI.ESPORTSINFO()`
+
+Display eSports information image.
 
 
 ## UI.CLOSE
@@ -380,3 +432,15 @@ pasdk.UI.CLOSE()
 
 Close modal that is open currently
 
+
+## UI.CLEAR
+
+> UI.CLEAR()
+
+```javascript
+pasdk.UI.CLEAR()
+```
+
+`UI.CLEAR()`
+
+Remove all elements that is created by SDK from DOM.

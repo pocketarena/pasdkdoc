@@ -20,19 +20,16 @@ returncode | message | detail | userMessage
  | | EMAIL_IS_ALREADY_IN_USE | An account with this email is already in use.
  | | WRONG_SHOP_ITEM | The item could not be found in the shop.
  | | WRONG_ID_OR_PASSWORD | Invalid ID or password.
- | | INVALID_PHONE_NUMBER | Phone number is invalid.
- | | THIS_PHONE_NUMBER_IS_ALREADY_USED_TO_VERIFY | This phone number is already in use.
  | | WRONG_CURRENT_PASSWORD | Current password is incorrect.
  | | WRONG_FILE_EXTENSION | Wrong file extension.
- | | WRONG_USER_INFO_OR_OTP | Could not sign in because of wrong user info.
- | | NEED_AGREEMENT_PACOIN | Phone number verification is required to use POC.
+ | | WRONG_USER_INFO_OR_OTP | Could not login because of wrong user info.
+ | | NEED_AGREEMENT_PACOIN | Verification is required to use POC.
  | | UNKNOWN_USER_ITEM | It's an unknown user item.
  | | UNAVAILABLE_USER_ITEM | The item is unavailable.
  | | WRONG_PASSWORD | Invalid ID or password.
-401 | Unauthorized<br> Player needs to sign in.<br> ex) - Valid session time is over. <br>- Player signed out.<br> - Player is not signed in.<br> - disabled account | UNKNOWN_USER | Unknown user.
+401 | Unauthorized<br> Player needs to login.<br> ex) - Valid session time is over. <br>- Player signed out.<br> - Player is not signed in.<br> - disabled account | UNKNOWN_USER | Unknown user.
  | | DISABLED_ACCOUNT | This account has been disabled.
  | | SESSION_EXPIRED | Session has expired.
-402 | Phone verification required<br> User needs to do email verification to use POC. When user is not verified by phone this code will be returned | PHONE_VERIFICATION_REQUIRED | Phone verification required.
 429 | Too many request | TOO_MANY_SIGN_UP_WITH_SAME_IP | You can not create a PA Account on your current IP address.
 500 | Server error<br> ex) server is not available, unknown error, etc | SYSTEM_ERROR | Server error has occurred.
  | | CAN_NOT_GET_USER_POC |  Server error has occurred.

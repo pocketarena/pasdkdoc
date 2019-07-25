@@ -26,7 +26,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -86,7 +86,7 @@ Type | Argument | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -136,7 +136,7 @@ Type | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -178,7 +178,7 @@ Type | Argument | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
@@ -226,7 +226,7 @@ pasdk.GAME.LEADERBOARD(refresh, function(leaderboard){
    "enddate":1564790400,
    "gameid":"yVvIYCpw",
    "gameesportsno":"25",
-   "gametitle":"Cricket Championship for MicroMax",
+   "gametitle":"Cricket Championship",
    "durationno": 2,
    "remaintime": 234550,
    "bgimage": "https:\/\/..com\/upload\/game\/pic\/1.png",
@@ -322,11 +322,11 @@ Type | Key | Key | Description
 ----- | ------- | --- | ------- 
  <span class="d-type string">String</span> | eventtitle | | Its value will be returned if event exists. Otherwise, empty string("") 
  <span class="d-type string">String</span> | gameid | | Game id of current game
- <span class="d-type string">String</span> | gameesportsno | | Game id of current game
+ <span class="d-type string">String</span> | gameesportsno | | eSports number
  <span class="d-type string">String</span> | gametitle | | Title of current eSports game
  <span class="d-type number">Number</span> | durationno | | 
  <span class="d-type number">Number</span> | remaintime | | Remaining time of this duration. in seconds.
- <span class="d-type string">String</span> | bgimage | | Background image to decorate current game's status. Developers can use their own image. 
+ <span class="d-type string">String</span> | bgimage | | Background image to decorate current eSports' status. Developers can use their own image. 
  <span class="d-type string">String</span> | stageno | | Stage number for this duration.
  <span class="d-type number">Number</span> | myleaderno | | Number of my leaderboard.
  <span class="d-type number">Number</span> | groupno | | Group number of my leaderboard.
@@ -363,8 +363,47 @@ Type | Key | Description
 ### `onError` argument
 Type | Description
 ----- | ------- 
-<span class="d-type func">Function</span> | Triggered when error occurs.
+<span class="d-type func">Function</span> | Triggered when error occurrs.
 
 See [Errors](#errors) menu
 
+
+## GAME.GETESPORTSSTATUS()
+
+> GAME.GETESPORTSSTATUS()
+
+```javascript
+var eSportsStat = pasdk.GAME.GETESPORTSSTATUS();
+// eSportsStat, when eSports is goin on 
+// { bgimage: "https://pacoin-dev1.pocketarena.com/upload/game/pic/170c4f795229b9f9d66d8b8ccdcc5732.png"
+// durationno: 14
+// enddate: 1560729600
+// enddates: "2019-06-17 00:00:00"
+// gametitle: "Cricket"
+// ischampion: "0"
+// remaintime: 71367
+// startdate: 1560643200
+// startdates: "2019-06-16 00:00:00"
+// totaluser: "0" }
+
+// eSportsStat, when eSports is NOT goin on
+// null
+```
+
+`GAME.GETESPORTSSTATUS()`
+
+Get eSports status information
+
+### Return value
+ Type | Value | Description
+ ------- | ------- | -----------
+ <span class="d-type string">String</span> | `bgimage` | Rank is based on number of win
+ <span class="d-type number">Number</span> | `duration` | Duration no
+ timestamp | `startdate` | Datetime of eSports start. ex) 1560643200
+ timestamp | `enddate` | Datetime of eSports end. ex) 1560729600
+ <span class="d-type string">String</span> | `startdates` | Formatted of `startdate`. ex) "2019-06-16 00:00:00"
+ <span class="d-type string">String</span> | `enddates` | Formatted of `enddate`. ex) "2019-06-16 00:00:00"
+ <span class="d-type string">String</span> | `gametitle` | Game title.
+ <span class="d-type string">String</span> | `ischampion` | `0`, when it's Casual eSports.<br> `1`, when it's PA Championship.
+ timestamp | `remaintime` | Time indicating how long current eSports is going to be. 
 

@@ -60,3 +60,9 @@ pasdk.ISREADY(function(){
 <aside class="notice">
 Most of API will work ONLY after onComplete function of ISREADY() API is triggered.
 </aside>
+
+### Implementation Example link ( Game Engine : Constructor 2 )
+<a href="https://pa.emojigames.io/ext_SmashNGrab/" target="_blank">https://pa.emojigames.io/ext_SmashNGrab/</a>
+
+### SDK API tool link
+<a href="https://pa-dev1.emojigames.io/spike/api-tool/" target="_blank">https://pa-dev1.emojigames.io/spike/api-tool/</a>
